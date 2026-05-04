@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySoul | Settings</title>
+
+  <link rel="stylesheet" href="../CSS/settings.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+  <a href="./user-home.html" class="back-btn">← Back</a>
+</header>
+<!-- MAIN SETTINGS CONTAINER -->
+  <div class="settings-container">
+
+    <!-- ================= PRIVACY SETTINGS ================= -->
+    <section class="privacy-card">
+
+  <h2 class="privacy-title">Privacy Settings</h2>
+  <p class="privacy-subtitle">Control how your personal information is shown to others.</p>
+
+  <!-- MOBILE VISIBILITY -->
+  <div class="privacy-section">
+    <h3>Mobile Number Visibility</h3>
+    <div class="privacy-options">
+      <button class="privacy-option">Visible to All</button>
+      <button class="privacy-option">Visible to Matches Only</button>
+      <button class="privacy-option">Hidden</button>
+    </div>
+    <p class="note">
+      Even when hidden, you may receive masked calls. Your real number stays protected.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PHOTO PRIVACY -->
+  <div class="privacy-section">
+    <h3>Photo Privacy</h3>
+    
+    <div class="toggle-row">
+      <span>Blur my photos</span>
+      <label class="switch">
+        <input type="checkbox" id="blurPhotos">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <span>Allow photo viewing only after Match</span>
+      <label class="switch">
+        <input type="checkbox" id="photoMatch">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LAST SEEN -->
+  <div class="privacy-section">
+    <h3>Last Seen</h3>
+    <div class="privacy-options">
+      <button class="privacy-option">Show Online Status</button>
+      <button class="privacy-option">Show Last Active</button>
+      <button class="privacy-option">Hide Completely</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INTEREST PRIVACY -->
+  <div class="privacy-section">
+    <h3>Who Can Send Me Interests?</h3>
+    <div class="privacy-options">
+      <button class="privacy-option">Everyone</button>
+      <button class="privacy-option">Verified Profiles Only</button>
+      <button class="privacy-option">Matches Only</button>
+    </div>
+  </div>
+
+  <button onclick="savePrivacy()" class="save-btn">
+  Save Settings
+</button>
+
+</section>
+
+
+
+    <!-- ================= NOTIFICATION SETTINGS ================= -->
+    <section class="settings-block">
+      <h2>Notifications</h2>
+
+      <div class="toggle-row">
+        <span>Email Alerts</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <span>SMS Alerts</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <span>Call Alerts</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+
+    <!-- ================= CHANGE PASSWORD BUTTON ================= -->
+    <section class="settings-block">
+      <h2>Change Password</h2>
+      <p class="subtitle">Use a strong password to keep your account safe.</p>
+
+      <button class="open-password-modal">Change Password</button>
+    </section>
+
+
+    <!-- ================= HIDE / DELETE PROFILE ================= -->
+    <section class="settings-block">
+      <h2>Hide/Delete Profile</h2>
+
+      <h4>Hide Profile</h4>
+      <p>You will not be shown to others. You can still view profiles but can't send messages.</p>
+
+      <label class="duration-title">Select Duration</label>
+
+      <div class="radio-group">
+        <label><input type="radio" name="hide" checked> 7 days</label>
+        <label><input type="radio" name="hide"> 15 days</label>
+        <label><input type="radio" name="hide"> 30 days</label>
+      </div>
+
+      <button class="hide-btn">Hide My Profile</button>
+
+      <div class="divider"></div>
+<div class="delete-flex-row">
+  <div class="delete-text">
+    <h4>Delete Profile</h4>
+    <p>This will permanently delete your profile along with all matches & chat history.</p>
+  </div>
+
+  <button class="delete-profile-btn">Delete Profile Permanently</button>
+</div>
+
+
+
+
+  <!-- ================= PASSWORD MODAL POPUP ================= -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h2>Change Password</h2>
+      <p class="subtitle">Use a strong password to keep your account safe.</p>
+
+      <label>Existing Password</label>
+      <div class="input-row">
+        <input type="password">
+        <span class="eye-icon">👁️</span>
+      </div>
+
+      <label>New Password</label>
+      <div class="input-row">
+        <input type="password">
+        <span class="eye-icon">👁️</span>
+      </div>
+
+      <label>Re-enter New Password</label>
+      <div class="input-row">
+        <input type="password">
+        <span class="eye-icon">👁️</span>
+      </div>
+
+      <div class="modal-buttons">
+        <button class="close-modal">Cancel</button>
+        <button class="save-password">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../JS/settings.js"></script>
+
+</body>
+</html>

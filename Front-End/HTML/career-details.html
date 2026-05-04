@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Details | MySoul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/career-details.css">
+</head>
+<body>
+
+
+
+<div class="top-action-box">
+  <a href="./home.html" class="action-btn">Home</a>
+  <a href="./help.html" class="action-btn">Help</a>
+</div>
+
+<section class="details-wrapper">
+
+<form class="details-card" id="careerDetailsForm" novalidate>
+
+  <h1>Great! You are about to complete your profile</h1>
+
+  <!-- COUNTRY -->
+  <div class="field dropdown-field">
+    <label>Country <span>*</span></label>
+    <input id="countryInput" type="text" placeholder="Select or type" required autocomplete="off">
+    <div class="custom-dropdown" id="countryDropdown"></div>
+  </div>
+
+<!-- STATE -->
+<div class="field dropdown-field" id="stateField" style="display:none;">
+  <label>State <span>*</span></label>
+  <input id="stateInput" type="text" placeholder="Select or type" autocomplete="off">
+  <div class="custom-dropdown" id="stateDropdown"></div>
+</div>
+
+<!-- CITY -->
+<div class="field dropdown-field" id="cityField" style="display:none;">
+  <label>City living in <span>*</span></label>
+  <input id="cityInput" type="text" placeholder="Select or type" autocomplete="off">
+  <div class="custom-dropdown" id="cityDropdown"></div>
+</div>
+
+  <!-- HIGHEST DEGREE -->
+  <div class="field dropdown-field">
+    <label>Highest Degree <span>*</span></label>
+    <input id="degreeInput" type="text" placeholder="Select or type"  autocomplete="off">
+    <div class="custom-dropdown" id="degreeDropdown"></div>
+  </div>
+
+  <!-- EMPLOYED IN -->
+  <div class="field dropdown-field">
+    <label>Employed In <span>*</span></label>
+    <input id="employedInput" type="text" placeholder="Select or type"  autocomplete="off">
+    <div class="custom-dropdown" id="employedDropdown"></div>
+  </div>
+
+  <!-- OCCUPATION -->
+  <div class="field dropdown-field" id="occupationField" style="display:none;">
+    <label>Occupation <span>*</span></label>
+    <input id="occupationInput" type="text" placeholder="Select or type"  autocomplete="off">
+    <div class="custom-dropdown" id="occupationDropdown"></div>
+  </div>
+
+  <!-- ANNUAL INCOME -->
+  <div class="field income-field">
+    <label>Annual Income <span>*</span></label>
+    <select id="incomeSelect" class="income-select" required>
+      <option value="">Select income range</option>
+      <option>Below 3 LPA</option>
+      <option>3 – 5 LPA</option>
+      <option>5 – 10 LPA</option>
+      <option>10 – 20 LPA</option>
+      <option>20+ LPA</option>
+    </select>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <div class="about-header">
+    <h2>Write Something About Yourself</h2>
+
+    <div class="lang-toggle">
+      <span>हिंदी में लिखें</span>
+      <label class="switch">
+        <input type="checkbox" id="langToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Express Yourself <span>*</span></label>
+    <textarea id="aboutInput" rows="5"
+      placeholder="Introduce yourself (Please do not mention your name, phone number, or social media handles).
+Write about your values, beliefs, goals, and aspirations. Describe your personality, interests, and hobbies.
+This content will be reviewed by our team before approval."
+      required></textarea>
+  </div>
+
+  <button type="submit" class="continue-btn" id="careerContinueBtn">
+    Complete Profile
+  </button>
+
+</form>
+</section>
+
+<script src="../JS/career-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/common.css">
+  <link rel="stylesheet" href="../CSS/chat.css">
+
+  <!-- SOCKET -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+
+    <a href="./user-home.html" class="back-btn">← Back</a>
+  </header>
+
+  <div class="chat-wrapper">
+
+    <div class="chat-box">
+
+      <div class="chat-header">
+        <img src="../images/default-profile.png" id="chatHeaderImg" class="header-dp">
+
+        <div class="header-info">
+          <h3 id="chatHeaderName">User</h3>
+          <p id="chatHeaderStatus">Online</p>
+        </div>
+      </div>
+
+      <!-- MESSAGES -->
+      <div class="messages-area" id="messagesArea"></div>
+
+      <!-- INPUT -->
+      <div class="chat-input">
+        <input type="text" id="chatMsg" placeholder="Write a message…">
+        <button id="sendBtn" class="send-btn">➤</button>
+      </div>
+
+      <div id="msgMenu" class="msg-menu">
+        <div id="editOption">✏️ Edit</div>
+        <div id="deleteOption">🗑 Delete</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="../JS/chat.js"></script>
+
+</body>
+
+</html>

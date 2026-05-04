@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Media & PR</title>
+  <link rel="stylesheet" href="../CSS/media-pr.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+
+  <a id="dynamicBack" class="back-btn">← Back</a>
+</header>
+
+<!-- ================= MAIN SECTION ================= -->
+<section class="media-container">
+
+  <h2 class="media-title">Media & Press Coverage</h2>
+  <p class="media-subtitle">See how MySoul is making headlines across India</p>
+
+  <!-- PRESS LOGOS -->
+  <div class="press-logos">
+    <img src="../images/press1.png">
+    <img src="../images/press2.png">
+    <img src="../images/press3.png">
+    <img src="../images/press4.png">
+  </div>
+
+  <!-- PRESS ARTICLES -->
+  <div class="press-list">
+
+    <div class="press-card" onclick="openPR(0)">
+      <img src="../images/media1.jpg">
+      <h3>MySoul Ranked as Fastest Growing Matrimonial Platform</h3>
+      <p>Leading newspapers feature MySoul success story...</p>
+    </div>
+
+    <div class="press-card" onclick="openPR(1)">
+      <img src="../images/media2.jpg">
+      <h3>How MySoul is Changing Digital Matchmaking in India</h3>
+      <p>New-age tech + love = perfect results...</p>
+    </div>
+
+    <div class="press-card" onclick="openPR(2)">
+      <img src="../images/media3.jpg">
+      <h3>Exclusive Interview With MySoul Founder</h3>
+      <p>Building the future of meaningful relationships...</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= POPUP ================= -->
+<div id="prPopup" class="popup-overlay">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup()">×</span>
+    <h2 id="popupTitle"></h2>
+    <p id="popupContent"></p>
+  </div>
+</div>
+
+<script src="../JS/media-pr.js"></script>
+</body>
+</html>

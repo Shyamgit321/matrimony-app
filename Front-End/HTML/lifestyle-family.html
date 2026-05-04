@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lifestyle & Family | MySoul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/lifestyle-family.css">
+</head>
+<body>
+
+<div class="top-action-box">
+  <a href="./home.html" class="action-btn">Home</a>
+  <a href="./help.html" class="action-btn">Help</a>
+</div>
+
+<section class="details-wrapper">
+  <form class="details-card" id="familyForm" novalidate>
+
+    <h1>We would love to know about your family</h1>
+
+    <!-- FAMILY TYPE -->
+    <div class="field">
+      <label>Family Type <span>*</span></label>
+      <div class="option-group family-type">
+        <button type="button">Single Family</button>
+        <button type="button">Nuclear Family</button>
+        <button type="button">Joint Family</button>
+        <button type="button">Others</button>
+      </div>
+      <input type="hidden" id="familyTypeInput" required>
+    </div>
+
+    <!-- FATHER -->
+    <div class="field">
+      <label>Father's Occupation <span>*</span></label>
+      <select id="fatherOccupation" required>
+        <option value="">Select</option>
+        <option>Business</option>
+        <option>Private Job</option>
+        <option>Government Job</option>
+        <option>Retired</option>
+        <option>Expired</option>
+      </select>
+    </div>
+
+    <!-- MOTHER -->
+    <div class="field">
+      <label>Mother's Occupation <span>*</span></label>
+      <select id="motherOccupation" required>
+        <option value="">Select</option>
+        <option>Housewife</option>
+        <option>Business</option>
+        <option>Private Job</option>
+        <option>Teacher</option>
+        <option>Expired</option>
+      </select>
+    </div>
+
+    <!-- BROTHER -->
+    <div class="field">
+      <label>Brother <span>*</span></label>
+      <div class="option-group brother-options">
+        <button type="button" data-count="0">None</button>
+        <button type="button" data-count="1">1</button>
+        <button type="button" data-count="2">2</button>
+        <button type="button" data-count="3">3+</button>
+      </div>
+      <input type="hidden" id="brotherCount" required>
+    </div>
+
+    <!-- SISTER -->
+    <div class="field">
+      <label>Sister <span>*</span></label>
+      <div class="option-group sister-options">
+        <button type="button" data-count="0">None</button>
+        <button type="button" data-count="1">1</button>
+        <button type="button" data-count="2">2</button>
+        <button type="button" data-count="3">3+</button>
+      </div>
+      <input type="hidden" id="sisterCount" required>
+    </div>
+
+    <!-- FAMILY LOCATION -->
+    <div class="field">
+      <label>Family Country <span>*</span></label>
+      <input id="familyCountry" type="text" required>
+    </div>
+
+    <div class="field">
+      <label>Family State <span>*</span></label>
+      <input id="familyState" type="text" required>
+    </div>
+
+    <div class="field">
+      <label>Native City <span>*</span></label>
+      <input id="familyCity" type="text" required>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="field">
+      <label>About My Family <span>*</span></label>
+      <textarea id="familyAbout" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="primary-btn">
+      Complete Profile
+    </button>
+
+  </form>
+</section>
+
+<script src="../JS/lifestyle-family.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Careers</title>
+  <link rel="stylesheet" href="../CSS/careers.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+  <a id="dynamicBack" class="back-btn">← Back</a>
+</header>
+
+<section class="career-container">
+  
+  <h2 class="career-title">Join Our Team</h2>
+  <p class="career-subtitle">Work with one of India’s fastest growing matchmaking platforms</p>
+
+  <div class="job-list">
+
+    <div class="job-card">
+      <h3>Frontend Developer</h3>
+      <p>React / HTML / CSS / JS</p>
+      <button onclick="openApply('Frontend Developer')">Apply Now</button>
+    </div>
+
+    <div class="job-card">
+      <h3>UI/UX Designer</h3>
+      <p>Figma / Adobe XD</p>
+      <button onclick="openApply('UI/UX Designer')">Apply Now</button>
+    </div>
+
+    <div class="job-card">
+      <h3>Backend Developer</h3>
+      <p>Node / Java / SQL</p>
+      <button onclick="openApply('Backend Developer')">Apply Now</button>
+    </div>
+
+    <div class="job-card">
+      <h3>Marketing Executive</h3>
+      <p>Digital Marketing / SEO</p>
+      <button onclick="openApply('Marketing Executive')">Apply Now</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- APPLY FORM POPUP -->
+<div id="applyPopup" class="popup-overlay">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup()">×</span>
+
+    <h2 id="jobTitle"></h2>
+
+    <input type="text" id="applicantName" placeholder="Your Name">
+    <input type="email" id="applicantEmail" placeholder="Your Email">
+    <textarea id="applicantMsg" placeholder="Why should we hire you?"></textarea>
+
+    <button class="submit-btn" onclick="submitApplication()">Submit Application</button>
+  </div>
+</div>
+
+<script src="../JS/careers.js"></script>
+
+</body>
+</html>

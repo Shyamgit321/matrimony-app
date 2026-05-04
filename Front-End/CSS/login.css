@@ -1,0 +1,152 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  font-size: 16px; /* base scaling */
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f9, #fde7f3);
+  display: flex;
+  justify-content: center;
+}
+
+/* SECTION */
+.login-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(80px, 10vh, 120px) 16px 40px;
+}
+
+/* CARD */
+.login-card {
+  background: #fff;
+  width: 100%;
+  max-width: clamp(330px, 30vw, 400px);
+  padding: clamp(28px, 4vw, 42px) clamp(24px, 3vw, 36px);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* TITLE */
+.login-card h2 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  margin-bottom: clamp(20px, 4vh, 28px);
+  color: #555;
+}
+
+/* INPUT BOX */
+.input-box {
+  position: relative;
+  margin-bottom: clamp(14px, 2vh, 18px);
+}
+
+.input-box input {
+  width: 100%;
+  height: clamp(44px, 6vh, 52px);
+  padding: 0 14px 0 44px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: clamp(14px, 1.1vw, 15px);
+  outline: none;
+}
+
+.input-box input:focus {
+  border-color: #ff4fa3;
+}
+
+/* ICON */
+.icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  font-size: 15px;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(12px, 1vw, 13px);
+  margin: 8px 0 16px;
+}
+
+.options a {
+  color: #ff4fa3;
+  text-decoration: none;
+}
+
+/* ERROR */
+.login-error {
+  font-size: clamp(12px, 1vw, 13px);
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* SIGN IN BUTTON */
+.sign-btn {
+  width: 100%;
+  height: clamp(46px, 6vh, 52px);
+  border-radius: 30px;
+  border: none;
+  background: #ff4fa3;
+  color: white;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sign-btn:hover {
+  background: #e63f8f;
+}
+
+/* GOOGLE LOGIN */
+.google-login {
+  width: 100%;
+  margin-top: clamp(14px, 3vh, 16px);
+  height: clamp(44px, 6vh, 50px);
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.google-login img {
+  width: 18px;
+}
+
+/* BOTTOM TEXT */
+.bottom-text {
+  margin-top: clamp(18px, 3vh, 22px);
+  font-size: clamp(13px, 1.1vw, 14px);
+  color: #666;
+}
+
+.bottom-text a {
+  color: #ff4fa3;
+  text-decoration: none;
+}
+
+/* SMALL MOBILE */
+@media (max-width: 360px) {
+  .login-card {
+    max-width: 92%;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Request a Callback</title>
+  <link rel="stylesheet" href="../CSS/support-callback.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+    <a href="./live-support.html" class="back-btn">← Back</a>
+  </header>
+
+  <!-- MAIN CARD -->
+  <div class="callback-box">
+
+  <h2>Request a Callback</h2>
+  <p class="sub-text">Our support team will reach out to you shortly.</p>
+
+  <!-- FULL NAME -->
+  <div class="field">
+    <input type="text" id="cb_name" placeholder="Your Full Name">
+  </div>
+
+  <!-- PHONE -->
+  <div class="phone-wrapper field">
+    <input type="text" id="cb_code" placeholder="+Country Code" oninput="allowCountryCode(this)">
+    <input type="tel" id="cb_phone" maxlength="10" placeholder="10-digit mobile number" oninput="allowNumbersOnly(this)">
+  </div>
+
+  <!-- ISSUE TYPE -->
+  <div class="field">
+    <select id="cb_issue">
+      <option disabled selected>Select Issue Type</option>
+      <option>Login Problem</option>
+      <option>Matchmaking Issue</option>
+      <option>Photo Upload Issue</option>
+      <option>Profile Verification</option>
+      <option>Payment & Billing</option>
+      <option>Report a User</option>
+      <option>Other Issue</option>
+    </select>
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="field">
+    <textarea id="cb_message" placeholder="Describe your issue..."></textarea>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <button onclick="submitCallback()">Request Callback</button>
+
+</div>
+
+  <script src="../JS/support-callback.js"></script>
+
+</body>
+</html>

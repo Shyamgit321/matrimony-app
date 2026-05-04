@@ -1,0 +1,275 @@
+/* ===========================
+   GLOBAL PAGE
+=========================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #fff5f9, #fde7f3);
+  min-height: 100vh;
+}
+
+/* ===========================
+   HEADER (Premium Glass)
+=========================== */
+.profile-header {
+  width: 95%;
+  max-width: 1250px;
+  margin: 25px auto 0;
+  padding: 18px 30px;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  border-radius: 60px;
+  box-shadow: 0 10px 28px rgba(255, 130, 155, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+}
+.logo-my {
+  color: #333;
+}
+.logo-soul {
+  color: #ff2fa3;
+  margin-left: -3px;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: #fde7f3;
+  transform: translateX(-4px);
+}
+/* Main box */
+.profile-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Photo */
+.photo-section {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 10px 25px rgba(255, 80, 140, 0.3);
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #ff2fa3;
+  color: white;
+  cursor: pointer;
+}
+
+/* POPUP */
+.popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.delete-btn {
+  background: #ff425a;
+  color: white;
+}
+
+.cancel-btn {
+  background: #e1e1e1;
+}
+
+/* Input fields */
+.edit-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 18px;
+}
+
+/* LABEL SPACE FIX */
+.field-group label {
+  display: block;
+  margin-bottom: 10px; /* Increased spacing */
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* INPUT + SELECT HEIGHT FIX */
+.field-group input,
+.field-group select {
+  width: 95%;
+  height: 48px; /* FIX: Exact height */
+  padding: 0 14px; /* FIX: Vertical padding removed */
+  line-height: 48px; /* FIX: Text vertical center */
+  border-radius: 10px;
+  border: 1px solid #f2b6c9;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+
+}
+
+/* DOB Row FIX */
+.dob-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Make all three dropdowns same height & fit in single line */
+.dob-row select {
+  flex: 1; /* Each takes equal width */
+  height: 48px;
+  padding: 0 14px;
+  line-height: 48px;
+  border-radius: 10px;
+  border: 1px solid #f2b6c9;
+  font-size: 15px;
+}
+
+/* Age, Gender dropdown same height */
+#e_age,
+#e_gender {
+  height: 48px !important;
+  line-height: 48px !important;
+  width: 101%;
+  margin-bottom: 10px;
+}
+
+#e_name {
+  margin-bottom: 10px;
+}
+
+/* SOCIAL */
+.social-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+}
+
+.social-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.social-input input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ffb8d7;
+}
+
+.social-input button {
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #e46d88;
+  color: white;
+  border: none;
+}
+
+/* Social list */
+.social-item {
+  background: #fff6fa;
+  padding: 12px 18px;
+  border-radius: 16px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.left-side img {
+  width: 30px;
+}
+
+.delete-social {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ff5d7c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Save button */
+.save-btn {
+  margin: 30px auto;
+  display: block;
+  padding: 14px 28px;
+  border-radius: 26px;
+  background: #e77592;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

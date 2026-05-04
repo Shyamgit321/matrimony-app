@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Details | MySoul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/profile-details.css">
+</head>
+
+<body>
+
+  <!-- TOP RIGHT HOME / HELP -->
+  <div class="top-action-box">
+    <a href="./home.html" class="action-btn">Home</a>
+    <a href="./help.html" class="action-btn">Help</a>
+  </div>
+
+  <section class="details-wrapper">
+
+    <form class="details-card" id="profileDetailsForm">
+
+      <h1>Let’s build profile to find your soul</h1>
+      <p class="subtitle">
+        This will help us find the most compatible matches for you
+      </p>
+
+      <!-- Groom Name -->
+      <div class="field">
+        <label>Groom's Name <span>*</span></label>
+        <input type="text" id="fullName" placeholder="Enter full name" required>
+        <small>Please provide your first name along with surname</small>
+      </div>
+
+      <!-- DATE OF BIRTH -->
+      <div class="field dob-field">
+        <label>Date of Birth <span>*</span></label>
+
+        <div class="dob-boxes">
+          <div class="dob-box" data-type="date">Date</div>
+          <div class="dob-box" data-type="month">Month</div>
+          <div class="dob-box" data-type="year">Year</div>
+        </div>
+
+        <div class="dob-dropdown" id="dobDropdown"></div>
+
+        <input type="hidden" id="dob" required>
+      </div>
+
+      <!-- Mother Tongue -->
+      <div class="field mother-field">
+        <label>Mother Tongue <span>*</span></label>
+        <input type="text" id="motherInput" placeholder="Select or type" autocomplete="off" required>
+        <div id="motherDropdown" class="custom-dropdown"></div>
+      </div>
+
+      <!-- Religion -->
+      <div class="field">
+        <label>Religion <span>*</span></label>
+        <select id="religionSelect" class="same-height" required>
+          <option value="">Select religion</option>
+          <!-- Options will load dynamically from DB -->
+        </select>
+      </div>
+
+      <!-- Caste -->
+      <div class="field caste-field">
+        <label>Caste <span>*</span></label>
+        <input type="text" id="casteInput" placeholder="Select or type" disabled required>
+        <div id="casteDropdown" class="caste-dropdown"></div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="noCaste">
+          <label for="noCaste">
+            Caste no bar (I am open to marry people of all castes)
+          </label>
+        </div>
+      </div>
+
+      <!-- Manglik -->
+      <div class="field">
+        <label>Are you manglik? <span>*</span></label>
+        <div class="option-group" id="manglikGroup" data-required="true">
+          <button type="button" class="select-box">Manglik</button>
+          <button type="button" class="select-box">Non-manglik</button>
+          <button type="button" class="select-box">Anshik manglik</button>
+        </div>
+      </div>
+
+      <!-- Marital Status -->
+      <div class="field">
+        <label>Marital status <span>*</span></label>
+        <div class="option-group" id="maritalGroup" data-required="true">
+          <button type="button" class="select-box">Never Married</button>
+          <button type="button" class="select-box">Awaiting Divorce</button>
+          <button type="button" class="select-box">Divorced</button>
+          <button type="button" class="select-box">Widowed</button>
+        </div>
+      </div>
+
+      <!-- Height -->
+      <div class="field">
+        <label>Height <span>*</span></label>
+        <select id="heightSelect" class="same-height" required>
+          <option value="">Select height</option>
+
+          <option>4ft 0in</option>
+          <option>4ft 1in</option>
+          <option>4ft 2in</option>
+          <option>4ft 3in</option>
+          <option>4ft 4in</option>
+          <option>4ft 5in</option>
+          <option>4ft 6in</option>
+          <option>4ft 7in</option>
+          <option>4ft 8in</option>
+          <option>4ft 9in</option>
+          <option>4ft 10in</option>
+          <option>4ft 11in</option>
+
+          <option>5ft 0in</option>
+          <option>5ft 1in</option>
+          <option>5ft 2in</option>
+          <option>5ft 3in</option>
+          <option>5ft 4in</option>
+          <option>5ft 5in</option>
+          <option>5ft 6in</option>
+          <option>5ft 7in</option>
+          <option>5ft 8in</option>
+          <option>5ft 9in</option>
+          <option>5ft 10in</option>
+          <option>5ft 11in</option>
+
+          <option>6ft 0in</option>
+          <option>6ft 1in</option>
+          <option>6ft 2in</option>
+          <option>6ft 3in</option>
+          <option>6ft 4in</option>
+          <option>6ft 5in</option>
+          <option>6ft 6in</option>
+          <option>6ft 7in</option>
+          <option>6ft 8in</option>
+          <option>6ft 9in</option>
+          <option>6ft 10in</option>
+          <option>6ft 11in</option>
+
+          <option>7ft 0in</option>
+          <option>7ft 1in</option>
+          <option>7ft 2in</option>
+          <option>7ft 3in</option>
+          <option>7ft 4in</option>
+          <option>7ft 5in</option>
+          <option>7ft 6in</option>
+          <option>7ft 7in</option>
+          <option>7ft 8in</option>
+          <option>7ft 9in</option>
+          <option>7ft 10in</option>
+          <option>7ft 11in</option>
+
+        </select>
+      </div>
+
+      <button type="submit" class="continue-btn">
+        Continue
+      </button>
+
+    </form>
+
+  </section>
+
+  <script src="../JS/profile-details.js"></script>
+</body>
+
+</html>

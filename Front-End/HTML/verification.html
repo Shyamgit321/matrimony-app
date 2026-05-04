@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySoul | Genuine Verification</title>
+  <link rel="stylesheet" href="../CSS/verification.css" />
+</head>
+
+<body>
+
+<!-- TOKEN PROTECTION -->
+<script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+  }
+</script>
+
+<!-- TOP RIGHT HOME/HELP -->
+<div class="top-action-box">
+  <a href="./home.html" class="action-btn">Home</a>
+  <a href="./help.html" class="action-btn">Help</a>
+</div>
+
+<section class="verify-wrapper">
+
+  <h2 class="title">Genuine Verification</h2>
+  <p class="subtitle">Increase your trust score & get more matches</p>
+
+  <div class="verify-grid">
+
+    <!-- ========== Gesture Verification ========== -->
+    <div class="verify-card">
+      <div class="icon-box">✋</div>
+      <h3>Gesture Verification</h3>
+      <p>Show a gesture (✌️ / 👍 / 👋) for authenticity.</p>
+
+      <input type="file" id="gestureUpload" accept="image/*" hidden>
+      <label for="gestureUpload" class="btn">Upload Gesture Photo</label>
+
+      <img id="gesturePreview" class="preview-img" hidden>
+      <button id="deleteGesture" class="delete-btn" hidden>Delete</button>
+    </div>
+
+    <!-- ========== Live Selfie ========== -->
+    <div class="verify-card">
+      <div class="icon-box">🤳</div>
+      <h3>Live Selfie Match</h3>
+      <p>Match your face with your profile picture.</p>
+
+      <button class="btn" id="selfieBtn">📸 Capture Now</button>
+
+      <video id="cameraStream" autoplay playsinline hidden></video>
+      <canvas id="selfieCanvas" hidden></canvas>
+
+      <img id="selfieResult" class="preview-img" hidden />
+      <button id="deleteSelfie" class="delete-btn" hidden>Delete</button>
+    </div>
+
+    <!-- ========== Voice Verification ========== -->
+    <div class="verify-card">
+      <div class="icon-box">🎤</div>
+      <h3>Voice Verification</h3>
+      <p>Record short 5 sec voice intro.</p>
+
+      <button class="btn" id="voiceRecordBtn">🎤 Start Recording</button>
+      <p id="voiceStatus"></p>
+
+      <audio id="audioPlayback" controls hidden></audio>
+      <button id="deleteVoice" class="delete-btn" hidden>Delete</button>
+    </div>
+
+    <!-- ========== Education Certificate ========== -->
+    <div class="verify-card">
+      <div class="icon-box">🎓</div>
+      <h3>Education Certificate</h3>
+      <p>Upload your degree / marksheet.</p>
+
+      <input type="file" id="eduUpload" hidden accept="image/*,application/pdf">
+      <label for="eduUpload" class="btn">Upload Document</label>
+
+      <p id="eduName" class="doc-name"></p>
+      <button id="deleteEdu" class="delete-btn" hidden>Delete</button>
+    </div>
+
+    <!-- ========== Job Proof ========== -->
+    <div class="verify-card">
+      <div class="icon-box">💼</div>
+      <h3>Job Verification</h3>
+      <p>Upload payslip / joining letter / company ID.</p>
+
+      <input type="file" id="jobUpload" hidden accept="image/*,application/pdf">
+      <label for="jobUpload" class="btn">Upload Job Proof</label>
+
+      <p id="jobName" class="doc-name"></p>
+      <button id="deleteJob" class="delete-btn" hidden>Delete</button>
+    </div>
+
+  </div>
+
+  <!-- CONTINUE BUTTON -->
+  <button type="button" class="continue-btn" id="verifyContinueBtn">
+    Continue
+  </button>
+
+</section>
+
+<script src="../JS/verification.js"></script>
+</body>
+</html>

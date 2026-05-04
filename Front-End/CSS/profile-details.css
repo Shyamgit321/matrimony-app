@@ -1,0 +1,439 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fff5f9, #fde7f3);
+}
+
+/* ===============================
+   WRAPPER & CARD
+================================ */
+.details-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.details-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 32px;
+  border-radius: 18px;
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+.details-card h1 {
+  margin-bottom: 6px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 26px;
+  font-size: 15px;
+}
+
+/* ===============================
+   FORM FIELDS
+================================ */
+.field {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+label span {
+  color: red;
+}
+
+/* ===============================
+   INPUTS & SELECTS
+================================ */
+input,
+select {
+  width: 100%;
+  padding: 12px 12px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #cfcfcf;
+  outline: none;
+}
+
+/* Tall input boxes (DOB, Religion, Height) */
+.big-input {
+  padding: 12px 12px;
+  background: #eef4ff;
+  font-size: 16px;
+}
+
+/* Readonly look */
+input[readonly] {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* ===============================
+   MOTHER TONGUE DROPDOWN
+================================ */
+.mother-field {
+  position: relative;
+}
+
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  max-height: 260px;
+  overflow-y: auto;
+  display: none;
+  z-index: 20;
+  margin-top: 4px;
+}
+
+.custom-dropdown .group {
+  padding: 10px 14px;
+  font-weight: 600;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.custom-dropdown .item {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-dropdown .item:hover {
+  background: #f2f2f2;
+}
+
+/* ===============================
+   CASTE DROPDOWN
+================================ */
+.caste-field {
+  position: relative;
+}
+
+.caste-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+  z-index: 20;
+  margin-top: 4px;
+}
+
+.caste-dropdown div {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.caste-dropdown div:hover {
+  background: #f2f2f2;
+}
+
+.checkbox {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ===============================
+   SELECTABLE BOXES
+================================ */
+.option-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.select-box {
+  flex: 1;
+  padding: 14px;
+  text-align: center;
+  border-radius: 14px;
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.select-box.active {
+  background: #d95c6a;
+  color: #ffffff;
+  border-color: #d95c6a;
+}
+
+/* ===============================
+   CONTINUE BUTTON
+================================ */
+.continue-btn {
+  width: 60%; /* pehle 100% tha → ab chhota */
+  max-width: 320px; /* desktop pe zyada bada na ho */
+  padding: 12px 16px; /* height kam */
+  margin: 18px auto 0; /* center align */
+  display: block;
+
+  background: #d46a74;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px; /* thoda kam round */
+  font-size: 15px; /* text chhota */
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  opacity: 0.95;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  .details-card {
+    padding: 22px;
+    border-radius: 14px;
+  }
+
+  .details-card h1 {
+    font-size: 24px;
+  }
+
+  .big-input {
+    padding: 18px 14px;
+  }
+
+  .select-box {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .continue-btn {
+    width: 100%;
+    max-width: none;
+    padding: 14px;
+  }
+}
+/* SAME HEIGHT FOR INPUT & SELECT (Mother Tongue + Religion + Height) */
+.same-height {
+  height: 50px; /* yahi main control hai */
+  padding: 0 16px;
+  font-size: 16px;
+  border-radius: 16px;
+  border: 1px solid #cfcfcf;
+  background: #eef4ff;
+  display: flex;
+  align-items: center;
+}
+
+/* ===============================
+   NEW DOB PICKER (DATE | MONTH | YEAR)
+================================ */
+.dob-field {
+  position: relative;
+}
+
+/* DATE | MONTH | YEAR BOXES */
+.dob-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #cfcfcf;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.dob-box {
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  border-right: 1px solid #dcdcdc;
+  user-select: none;
+}
+
+.dob-box:last-child {
+  border-right: none;
+}
+
+.dob-box.active {
+  background: #ffffff;
+  font-weight: 600;
+}
+
+/* DROPDOWN PANEL */
+.dob-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 6px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  display: none;
+  z-index: 50;
+  padding: 14px;
+}
+
+/* GRID INSIDE DROPDOWN */
+.dob-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.dob-item {
+  padding: 10px 6px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f7f7f7;
+  font-size: 14px;
+}
+
+.dob-item:hover {
+  background: #d95c6a;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .dob-box {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+
+  .dob-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===============================
+   TOP RIGHT PINK GLASS (VISIBLE)
+================================ */
+.top-action-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  gap: 18px;
+
+  padding: 14px 18px;
+  border-radius: 22px;
+
+  background: rgba(254, 247, 249, 0.85); /* 👈 more solid */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow: 0 18px 40px rgba(255, 140, 170, 0.35);
+
+  z-index: 1000;
+}
+
+/* BUTTON BASE – DARKER PINK */
+.action-btn {
+  text-decoration: none;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  background: linear-gradient(135deg, #e98aa0, #d86b86);
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(216, 107, 134, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER – CLEAR & NOTICEABLE */
+.action-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f1a2b5, #e17893);
+
+  box-shadow: 0 14px 30px rgba(216, 107, 134, 0.75);
+}
+
+/* ACTIVE */
+.action-btn:active {
+  transform: scale(0.96);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .top-action-box {
+    top: 12px;
+    right: 12px;
+    padding: 12px 14px;
+    gap: 14px;
+  }
+
+  .action-btn {
+    font-size: 14px;
+    padding: 9px 22px;
+  }
+}
+/* ===============================
+   MOBILE FIX – RIGHT SIDE + NO OVERLAP
+================================ */
+@media (max-width: 768px) {
+  .top-action-box {
+    position: sticky;
+    top: 10px;
+    right: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+
+    width: fit-content;
+    z-index: 1000;
+  }
+
+  .setup-section {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .action-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+}

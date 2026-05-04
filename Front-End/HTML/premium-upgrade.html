@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Upgrade Membership</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/premium-upgrade.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+
+  <a href="./premium-intro.html" class="back-btn">← Back</a>
+</header>
+
+
+<!-- ================= UPGRADE SECTION ================= -->
+<section class="upgrade-wrapper">
+
+  <h1 class="upgrade-title">Upgrade Membership</h1>
+
+  <!-- Toggle -->
+  <div class="toggle-box">
+    <div id="selfBtn" class="toggle-btn active">Self-Service</div>
+    <div id="assistBtn" class="toggle-btn">Assisted</div>
+  </div>
+
+  <!-- Self-Service Plans -->
+  <div id="plansRow" class="plans-row">
+
+    <!-- PRO -->
+    <div class="plan-card" data-plan="pro">
+      <h3>Pro</h3>
+      <ul>
+        <li>Unlimited calling ✔</li>
+        <li>Engage+ Access ✔</li>
+        <li>View contacts: 25</li>
+        <li>Super Interest: 0</li>
+        <li>Spotlights: 0</li>
+      </ul>
+      <div class="price-box">
+        <h4>₹404</h4>
+        <p>1 Month</p>
+      </div>
+    </div>
+
+    <!-- PRO MAX -->
+    <div class="plan-card active-plan" data-plan="promax">
+      <div class="top-tag">🔥 Best Value</div>
+      <h3>Pro Max</h3>
+      <ul>
+        <li>Unlimited calling ✔</li>
+        <li>Engage+ Access ✔</li>
+        <li>View contacts: 50</li>
+        <li>Super Interest: 50</li>
+        <li>Spotlights: 1</li>
+      </ul>
+      <div class="price-box">
+        <h4>₹1,012</h4>
+        <p>3 Months</p>
+      </div>
+    </div>
+
+    <!-- SUPREME -->
+    <div class="plan-card" data-plan="supreme">
+      <h3>Pro Supreme</h3>
+      <ul>
+        <li>Unlimited calling ✔</li>
+        <li>Engage+ Access ✔</li>
+        <li>View contacts: 80</li>
+        <li>Super Interest: 80</li>
+        <li>Spotlights: 3</li>
+      </ul>
+      <div class="price-box">
+        <h4>₹3,080</h4>
+        <p>Till Marriage</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Final Button -->
+  <button id="upgradeBtn" class="upgrade-btn-final">
+    Upgrade to Pro Max →
+  </button>
+
+
+  <!-- ================= ASSISTED SECTION ================= -->
+  <div id="assistedBox" class="assisted-section hidden">
+
+    <h2 class="assist-title">Exclusive</h2>
+    <hr class="line">
+
+    <div class="assist-benefit">
+      <div class="assist-icon purple">🏅</div>
+      <div class="assist-text">
+        <b>Benefits of Top Seller</b> + unlimited matches daily
+      </div>
+    </div>
+
+    <div class="assist-benefit">
+      <div class="assist-icon blue">👤</div>
+      <div class="assist-text">
+        <b>Dedicated Relationship Manager</b>
+        <ul>
+          <li>Enhance your profile</li>
+          <li>Find serious & relevant matches</li>
+          <li>Verified partner background info</li>
+          <li>3× faster matching</li>
+          <li>Unlimited meeting setup</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="assist-buttons">
+  <button class="request-btn" onclick="goToSupport()">Request Call Back</button>
+  <button class="know-btn">Know more →</button>
+</div>
+
+
+    <p class="assist-offer">✨ FLAT 70% OFF ON ASSISTED PLANS</p>
+
+    <!-- Assisted Plans -->
+<div id="assistedPlans" class="assisted-plans-row">
+
+  <!-- 3 Months -->
+  <div class="assist-plan-card active-assist-plan" data-assist="3m">
+    <h4>3 months</h4>
+    <h2>₹9,951</h2>
+    <p class="strike">₹33,169</p>
+  </div>
+
+  <!-- 6 Months -->
+  <div class="assist-plan-card" data-assist="6m">
+    <h4>6 months</h4>
+    <h2>₹15,712</h2>
+    <p class="strike">₹52,372</p>
+  </div>
+
+  <!-- 12 Months -->
+  <div class="assist-plan-card" data-assist="12m">
+    <h4>12 months</h4>
+    <h2>₹25,424</h2>
+    <p class="strike">₹84,745</p>
+  </div>
+</div>
+
+<button id="assistUpgradeBtn" class="upgrade-btn-final">
+  Get 3 months Exclusive →
+</button>
+
+<p class="note">Recurring payment, cancel anytime</p>
+
+
+  </div>
+
+</section>
+
+
+<script src="../JS/premium-upgrade.js"></script>
+
+</body>
+</html>

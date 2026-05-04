@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Submit Ticket</title>
+  <link rel="stylesheet" href="../CSS/support-ticket.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+  <a href="./live-support.html" class="back-btn">← Back</a>
+</header>
+
+<!-- MAIN FORM -->
+<section class="ticket-container">
+
+  <h1 class="title">Submit a Support Ticket</h1>
+  <p class="subtitle">Our team will reply within 24 hours 💗</p>
+
+  <div class="ticket-box">
+
+    <input type="text" id="t_name" placeholder="Your Full Name">
+
+    <input type="email" id="t_email" placeholder="Your Email Address">
+
+    <select id="t_issue">
+      <option value="" disabled selected>Choose Issue Type</option>
+      <option>Login Issue</option>
+      <option>Match Not Showing</option>
+      <option>Photo Upload Problem</option>
+      <option>Payment Related</option>
+      <option>Profile / Information Issue</option>
+      <option>Report a User</option>
+      <option>Other Issue</option>
+    </select>
+
+    <textarea id="t_msg" placeholder="Describe your issue..."></textarea>
+
+    <!-- SCREENSHOT -->
+    <label class="upload-label">
+      <i class="fa-solid fa-image"></i> Upload Screenshot (Optional)
+    </label>
+    <input type="file" id="t_file" accept="image/*">
+
+    <img id="filePreview" class="preview-img" />
+
+    <button onclick="submitTicket()">Submit Ticket</button>
+  </div>
+
+</section>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup-overlay">
+  <div class="popup-box">
+    <i class="fa-solid fa-circle-check success-icon"></i>
+    <h2>Ticket Submitted!</h2>
+    <p>Our team will contact you very soon 💗</p>
+    <button onclick="closePopup()">Okay</button>
+  </div>
+</div>
+
+<script src="../JS/support-ticket.js"></script>
+
+</body>
+</html>

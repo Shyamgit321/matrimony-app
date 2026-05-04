@@ -1,0 +1,546 @@
+/* PAGE BACKGROUND */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #ffe4ef, #f7e8ff, #ffe8f6);
+  background-size: 200%;
+  animation: bgShift 12s infinite alternate;
+}
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  padding: 16px 36px;
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 34px rgba(201, 79, 92, 0.2);
+}
+
+/* ================= LOGO ================= */
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+}
+.logo-my {
+  color: #333;
+}
+.logo-soul {
+  color: #ff2fa3;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: #fde7f3;
+  transform: translateX(-3px);
+}
+
+@keyframes bgShift {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* ===================== WRAPPER ===================== */
+.upgrade-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.upgrade-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* ===================== TOGGLE BUTTONS ===================== */
+.toggle-box {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 40px;
+  padding: 6px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(255, 110, 150, 0.2);
+  margin-bottom: 25px;
+}
+
+.toggle-btn {
+  padding: 12px 36px;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #555;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: #ff2fa3;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 0, 120, 0.3);
+}
+
+/* ===================== SELF-SERVICE PLANS ===================== */
+.plans-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 20px;
+}
+
+/* PLAN CARD (default) */
+.plan-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  border-radius: 22px;
+  padding: 28px;
+  text-align: left;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow: 0 12px 32px rgba(255, 120, 160, 0.20);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 90, 150, 0.28);
+}
+
+/* ACTIVE PLAN */
+.plan-card.active-plan {
+  border: 2px solid #ff2fa3;
+  box-shadow: 0 20px 50px rgba(255, 30, 140, 0.35);
+  transform: scale(1.03);
+}
+
+/* TOP TAG */
+.top-tag {
+  background: linear-gradient(135deg, #ffb64d, #ff8c00);
+  padding: 6px 14px;
+  border-radius: 12px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+/* LIST */
+.plan-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.plan-card li {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* PRICE */
+.price-box h4 {
+  font-size: 28px;
+  margin: 0;
+  color: #d83274;
+}
+.price-box p {
+  margin: 0;
+  color: #555;
+}
+
+/* ===================== FINAL UPGRADE BUTTON ===================== */
+.upgrade-btn-final {
+  margin-top: 40px;
+  width: 60%;
+  padding: 15px;
+  border-radius: 18px;
+  border: none;
+
+  background: linear-gradient(135deg, #ff4f6d, #ff007b);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(255, 50, 110, 0.4);
+
+  transition: 0.3s;
+}
+
+.upgrade-btn-final:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(255, 40, 80, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===================== ASSISTED SECTION ===================== */
+.assisted-section {
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 34px rgba(255, 130, 170, 0.25);
+
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.assist-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.line {
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,0.07);
+  margin-bottom: 25px;
+}
+
+/* BENEFIT ROW */
+.assist-benefit {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+/* ICONS */
+.assist-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  color: #fff;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.assist-icon.purple {
+  background: linear-gradient(135deg, #a96eff, #c68aff);
+}
+.assist-icon.blue {
+  background: linear-gradient(135deg, #6ea8ff, #4e7bff);
+}
+
+.assist-text {
+  font-size: 15px;
+  color: #333;
+}
+
+.assist-text ul {
+  margin-top: 8px;
+  margin-left: 18px;
+}
+
+/* BUTTONS */
+.assist-buttons {
+  margin: 25px 0;
+  display: flex;
+  gap: 18px;
+}
+
+.request-btn {
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 2px solid #d9534f;
+  background: transparent;
+  color: #d9534f;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.request-btn:hover {
+  background: #d9534f;
+  color: white;
+}
+
+.know-btn {
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 2px solid #d9534f;
+  background: transparent;
+  color: #d9534f;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.know-btn:hover {
+  background: #d9534f;
+  color: white;
+}
+/* OFFER TEXT */
+.assist-offer {
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2b3d80;
+  text-align: center;
+}
+
+/* ASSISTED PLAN ROW */
+.assisted-plans-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+/* ASSISTED PLAN CARD */
+.assist-plan-card {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(18px);
+  border: 2px solid rgba(255,255,255,0.65);
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(255, 120, 170, 0.2);
+}
+
+.assist-plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(255, 90, 150, 0.28);
+}
+
+.assist-plan-card h4 {
+  color: #c11d5a;
+  font-size: 17px;
+}
+
+.assist-plan-card h2 {
+  margin: 8px 0 4px 0;
+  color: #222;
+  font-size: 26px;
+}
+
+.strike {
+  color: #888;
+  text-decoration: line-through;
+}
+
+/* ACTIVE SELECTED ASSIST PLAN */
+.active-assist-plan {
+  border: 2px solid #ff2fa3;
+  box-shadow: 0 16px 40px rgba(255, 0, 120, 0.35);
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .assisted-plans-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 576px) {
+  .assisted-plans-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Tablets (Portrait & Small Landscape) */
+@media (max-width: 991px) {
+  .plans-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .upgrade-btn-final {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .toggle-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets / Large Mobile (600–768px) */
+@media (max-width: 768px) {
+
+  .upgrade-title {
+    font-size: 26px;
+  }
+
+  .toggle-box {
+    width: 90%;
+  }
+
+  .toggle-btn {
+    padding: 10px 20px;
+  }
+
+  .plans-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .plan-card {
+    padding: 22px;
+  }
+
+  .assist-benefit {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .assist-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .request-btn,
+  .know-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile Phones (FULL RESPONSIVE) */
+@media (max-width: 576px) {
+
+  .upgrade-wrapper {
+    padding: 20px 10px;
+  }
+
+  .upgrade-title {
+    font-size: 22px;
+  }
+
+  /* Toggle Box full width */
+  .toggle-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Plans 1 column */
+  .plans-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .plan-card {
+    padding: 20px;
+  }
+
+  .price-box h4 {
+    font-size: 22px;
+  }
+
+  /* Upgrade button full */
+  .upgrade-btn-final {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  /* Assisted section */
+  .assisted-section {
+    padding: 20px;
+  }
+
+  .assist-benefit {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .assist-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .assist-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .request-btn,
+  .know-btn {
+    width: 100%;
+  }
+}
+
+/* Small Android Devices (<= 420px) */
+@media (max-width: 420px) {
+
+  .upgrade-title {
+    font-size: 20px;
+  }
+
+  .toggle-btn {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .plan-card {
+    padding: 18px;
+  }
+
+  .assist-text ul {
+    margin-left: 15px;
+  }
+
+  .upgrade-btn-final {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

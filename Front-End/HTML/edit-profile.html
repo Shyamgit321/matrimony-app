@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+
+  <link rel="stylesheet" href="../CSS/edit-profile.css" />
+</head>
+
+<body>
+
+  <header class="profile-header">
+    <h2 class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </h2>
+    <a href="./profile.html" class="back-btn">← Back</a>
+  </header>
+
+  <section class="profile-wrapper">
+
+    <!-- PHOTO -->
+    <div class="photo-section">
+      <img id="editPhotoPreview" src="../images/default-profile.png" class="profile-img" />
+      <div class="edit-icon" onclick="handlePhotoClick()">✏️</div>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+    </div>
+
+    <!-- POPUP -->
+    <div id="photoPopup" class="popup-bg" style="display:none;">
+      <div class="popup-box">
+        <h3>Profile Photo</h3>
+        <button onclick="triggerPhotoInput()">📸 Change Photo</button>
+        <button onclick="deletePhoto()" class="delete-btn">🗑 Delete Photo</button>
+        <button onclick="closePopup()" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- FIELDS -->
+    <div class="edit-box">
+
+      <div class="field-group">
+        <label>Name</label>
+        <input type="text" id="e_name">
+      </div>
+
+      <div class="field-group">
+        <label>Gender</label>
+        <select id="e_gender">
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Match Preference</label>
+        <select id="e_matchPref">
+          <option value="opposite">Opposite Gender</option>
+          <option value="same">Same Gender</option>
+          <option value="both">Both</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Date of Birth</label>
+        <div class="dob-row">
+          <select id="dobDate"></select>
+          <select id="dobMonth"></select>
+          <select id="dobYear"></select>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Religion</label>
+        <input type="text" id="e_religion">
+      </div>
+
+      <div class="field-group">
+        <label>Caste</label>
+        <input type="text" id="e_caste">
+      </div>
+
+      <div class="field-group">
+        <label>Mother Tongue</label>
+        <input type="text" id="e_mother">
+      </div>
+
+      <div class="field-group">
+        <label>City</label>
+        <input type="text" id="e_city">
+      </div>
+
+      <div class="field-group">
+        <label>Profession</label>
+        <input type="text" id="e_profession">
+      </div>
+
+      <div class="field-group">
+        <label>Height</label>
+        <input type="text" id="e_height" placeholder="e.g. 5ft 8in">
+      </div>
+
+      <div class="field-group">
+        <label>Marital Status</label>
+        <select id="e_marital">
+          <option value="">Select</option>
+          <option value="Single">Single</option>
+          <option value="Divorced">Divorced</option>
+          <option value="Widowed">Widowed</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Highest Degree</label>
+        <input type="text" id="e_degree">
+      </div>
+
+      <div class="field-group">
+        <label>Income</label>
+        <input type="text" id="e_income">
+      </div>
+
+      <div class="field-group">
+        <label>About</label>
+        <textarea id="e_about"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>Family Type</label>
+        <input type="text" id="e_familyType">
+      </div>
+
+      <div class="field-group">
+        <label>Father Occupation</label>
+        <input type="text" id="e_father">
+      </div>
+
+      <div class="field-group">
+        <label>Mother Occupation</label>
+        <input type="text" id="e_motherOcc">
+      </div>
+
+      <div class="field-group">
+        <label>Brother Count</label>
+        <input type="number" id="e_brother">
+      </div>
+
+      <div class="field-group">
+        <label>Sister Count</label>
+        <input type="number" id="e_sister">
+      </div>
+
+    </div>
+
+    <button class="save-btn" onclick="saveAll()">Save Profile</button>
+
+  </section>
+
+  <script src="../JS/edit-profile.js"></script>
+
+</body>
+
+</html>

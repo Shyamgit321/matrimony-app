@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congratulations | MySoul</title>
+  <link rel="stylesheet" href="../CSS/congratulations.css">
+</head>
+<body>
+
+<script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+  }
+</script>
+
+<div class="card">
+  <div class="icon">🎉</div>
+
+  <h1>Congratulations!</h1>
+
+  <p>
+    Your profile has been successfully completed.<br>
+    Welcome to <strong>MySoul</strong> — where real connections begin.
+  </p>
+
+  <p class="redirect">Redirecting you to home...</p>
+
+  <button id="goHomeBtn">Go to Home Now</button>
+</div>
+
+<script src="../JS/congratulations.js"></script>
+</body>
+</html>

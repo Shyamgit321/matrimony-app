@@ -1,0 +1,399 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fff5f9, #fde7f3);
+}
+
+/* ===============================
+   WRAPPER & CARD
+================================ */
+.details-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.details-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 32px;
+  border-radius: 18px;
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+.details-card h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.subtitle span {
+  color: red;
+}
+
+/* ===============================
+   FORM FIELDS
+================================ */
+.field {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+label span {
+  color: red;
+}
+
+/* ===============================
+   INPUTS / SELECT / TEXTAREA
+================================ */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 14px;
+  border: 1px solid #cfcfcf;
+  background: #eef4ff;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+.divider {
+  margin: 28px 0;
+  border: none;
+  height: 1px;
+  background: #eee;
+}
+
+/* ===============================
+   ABOUT HEADER
+================================ */
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.about-header h2 {
+  font-size: 16px; /* 👈 fixed smaller */
+  font-weight: 500;
+  color: #444;
+}
+
+/* ===============================
+   LANGUAGE TOGGLE
+================================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 22px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #d46a74;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* ===============================
+   DROPDOWN SYSTEM
+================================ */
+.dropdown-field {
+  position: relative;
+}
+
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  display: none;
+  z-index: 200;
+  margin-top: 4px;
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 24px;
+}
+
+.dropdown-title {
+  grid-column: span 3;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dropdown-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background: #d46a74;
+  color: #ffffff;
+}
+
+/* ===============================
+   STATE / CITY TRANSITION
+================================ */
+#stateField,
+#cityField {
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   ANNUAL INCOME (CUSTOM HEIGHT)
+================================ */
+.income-field {
+  margin-bottom: 22px;
+}
+
+.income-select {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 15px;
+  border-radius: 14px;
+  border: 1px solid #cfcfcf;
+  background: #eef4ff;
+}
+
+/* ===============================
+   CONTINUE BUTTON
+================================ */
+.continue-btn {
+  width: 60%;
+  max-width: 320px;
+  margin: 24px auto 0;
+  display: block;
+  padding: 14px;
+  background: #d46a74;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  opacity: 0.95;
+}
+
+/* ===============================
+   TOP RIGHT GLASS BUTTONS
+================================ */
+.top-action-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 18px;
+  padding: 14px 18px;
+  border-radius: 22px;
+  background: rgba(254, 247, 249, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 40px rgba(255, 140, 170, 0.35);
+  z-index: 1000;
+}
+
+.action-btn {
+  text-decoration: none;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e98aa0, #d86b86);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(216, 107, 134, 0.55);
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .details-card {
+    padding: 22px;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .continue-btn {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   CUSTOM DROPDOWN SIZE CONTROL
+================================ */
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 6px;
+
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+}
+
+/* Smooth scroll */
+.custom-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-dropdown::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+.custom-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  padding: 14px;
+}
+.dropdown-title {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+  margin-top: 8px;
+}
+.dropdown-item {
+  padding: 6px 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.dropdown-item:hover {
+  background: #f2f5ff;
+}
+.custom-dropdown {
+  animation: fadeDown 0.2s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===============================
+   ANNUAL INCOME – CUSTOM HEIGHT
+================================ */
+.income-field select {
+  height: 50px;
+  padding: 0 18px;
+  font-size: 16px;
+  border-radius: 16px;
+  background-color: #eef4ff;
+  border: 1px solid #cfcfcf;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 600px) {
+  .income-field select {
+    height: 54px;
+    font-size: 15px;
+  }
+}
+#stateField input,
+#cityField input {
+  display: block !important;
+  width: 100% !important;
+}

@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #fff5f9, #fde7f3);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* HEADER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  padding: 16px 28px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 34px rgba(201, 79, 92, 0.2);
+}
+
+.logo { font-size: 28px; font-weight: 800; }
+.logo-my { color: #333; }
+.logo-soul { color: #ff2fa3; }
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: 0.25s ease;
+}
+.back-btn:hover { background: #fde7f3; transform: translateX(-3px); }
+
+/* MAIN */
+.support-container {
+  width: 92%;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  color: #e83e8c;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: -8px;
+  color: #444;
+  font-size: 15px;
+}
+
+/* GRID */
+.support-grid {
+  margin-top: 35px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.support-card {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(255,0,120,0.18);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+.support-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(255,0,120,0.25);
+}
+
+.icon {
+  font-size: 38px;
+  color: #ff2fa3;
+  margin-bottom: 12px;
+}
+
+.support-card h3 {
+  font-size: 20px;
+  color: #e83e8c;
+}
+
+.support-card p {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.support-card button {
+  background: #ff2fa3;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.support-card button:hover {
+  background: #e0188a;
+  transform: translateY(-2px);
+}

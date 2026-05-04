@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #fff5f9, #fde7f3);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  padding: 16px 36px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 34px rgba(201, 79, 92, 0.2);
+}
+
+.logo { font-size: 30px; font-weight: 800; }
+.logo-my { color: #333; }
+.logo-soul { color: #ff2fa3; }
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: 0.25s ease;
+}
+.back-btn:hover { background: #fde7f3; transform: translateX(-3px); }
+
+
+
+/* MAIN BOX */
+.callback-box {
+  width: 100%;
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 28px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(255,0,120,0.18);
+  text-align: center;
+}
+
+/* ALL INPUTS SAME WIDTH */
+.callback-box input,
+.callback-box textarea,
+.callback-box select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-top: 15px;
+  border: 1px solid #ffd2e8;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* PHONE ROW FIX (EQUAL SPACING) */
+.phone-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Country code small | phone big */
+#cb_code {
+  flex: 0.35;
+}
+
+#cb_phone {
+  flex: 1;
+}
+
+/* SELECT BOX HEIGHT MATCH FIX */
+select {
+  height: 52px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23e83e8c' width='14' height='14' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 14px;
+}
+
+/* TEXTAREA */
+textarea {
+  height: 110px;
+  resize: none;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .phone-wrapper {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+.field {
+  width: 100%;
+}
+button {
+  margin-top: 20px;
+  padding: 15px;
+  width: 70%;
+  background: #ff2fa3;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e0188a;
+}

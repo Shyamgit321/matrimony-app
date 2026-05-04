@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySoul | Profile</title>
+  
+  <link rel="stylesheet" href="../CSS/profile.css" />
+</head>
+
+<body>
+
+  <header class="profile-header">
+    <h2 class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </h2>
+
+    <a href="./user-home.html" class="back-btn">← Back</a>
+  </header>
+
+  <section class="profile-layout">
+
+    <!-- LEFT -->
+    <div class="left-box">
+
+      <div class="photo-wrap">
+        <img id="profilePreview" src="../images/default-profile.png" class="img-lg" />
+      </div>
+
+      <h3 class="social-title">Social Profiles</h3>
+      <!-- <div id="socialList" class="social-list"></div> -->
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-box">
+
+      <h2 class="details-title">Your Profile Details</h2>
+
+      <!-- BASIC -->
+      <div class="details-card">
+        <p><strong>Name:</strong> <span id="p_name">—</span></p>
+        <p><strong>Age:</strong> <span id="p_age">—</span></p>
+        <p><strong>Gender:</strong> <span id="p_gender">—</span></p>
+        <p><strong>City:</strong> <span id="p_city">—</span></p>
+        <p><strong>Profession:</strong> <span id="p_profession">—</span></p>
+        <p><strong>Religion:</strong> <span id="p_religion">—</span></p>
+        <p><strong>Caste:</strong> <span id="p_caste">—</span></p>
+      </div>
+
+      <!-- SHOW MORE BUTTON -->
+      <p id="toggleMoreBtn" class="toggle-link">
+        Show more ▼
+      </p>
+
+      <!-- HIDDEN DETAILS -->
+      <div id="moreDetails" style="display:none; margin-top:15px;">
+
+        <div class="details-card">
+          <p><strong>DOB:</strong> <span id="p_dob">—</span></p>
+
+          <p><strong>Height:</strong> <span id="p_height">—</span></p>
+          <p><strong>Marital Status:</strong> <span id="p_marital">—</span></p>
+          <p><strong>Education:</strong> <span id="p_degree">—</span></p>
+
+          <p><strong>Mother Tongue:</strong> <span id="p_mother">—</span></p>
+          <p><strong>Income:</strong> <span id="p_income">—</span></p>
+          <p><strong>About:</strong> <span id="p_about">—</span></p>
+
+          <hr>
+
+          <p><strong>Family Type:</strong> <span id="p_familyType">—</span></p>
+          <p><strong>Father:</strong> <span id="p_father">—</span></p>
+          <p><strong>Mother:</strong> <span id="p_motherOcc">—</span></p>
+          <p><strong>Brother:</strong> <span id="p_brother">—</span></p>
+          <p><strong>Sister:</strong> <span id="p_sister">—</span></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="edit-btn-wrap">
+    <button class="edit-btn" onclick="location.href='edit-profile.html'">
+      Edit Profile
+    </button>
+  </div>
+
+  <script src="../JS/profile.js"></script>
+</body>
+
+</html>

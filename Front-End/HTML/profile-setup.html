@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Setup | MySoul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../CSS/profile-setup.css">
+</head>
+
+<body>
+
+  <div class="top-action-box">
+    <a href="./home.html" class="action-btn home-btn">Home</a>
+    <a href="./help.html" class="action-btn help-btn">Help</a>
+  </div>
+
+  <section class="setup-section">
+    <div class="setup-card">
+
+      <h1>Let’s build profile to find your soul</h1>
+      <p class="subtitle">
+        This will help us find the most compatible matches for you
+      </p>
+
+      <form id="registerForm" novalidate>
+
+        <!-- EMAIL (AUTO FILLED) -->
+        <div class="field">
+          <label>Your Email <span>*</span></label>
+          <input type="email" id="email" required autocomplete="off" />
+        </div>
+
+        <!-- MOBILE -->
+        <div class="field">
+          <label>Mobile No. <span>*</span></label>
+          <input type="text" id="phone" placeholder="10 digit mobile number" maxlength="10" pattern="[0-9]{10}"
+            required>
+        </div>
+
+        <!-- CREATE PROFILE FOR -->
+        <div class="field">
+          <label>Create profile for <span>*</span></label>
+
+          <div class="option-grid" id="profileFor">
+            <button type="button" data-show-gender="yes">Self</button>
+            <button type="button" data-show-gender="no">Son</button>
+            <button type="button" data-show-gender="no">Daughter</button>
+            <button type="button" data-show-gender="no">Sister</button>
+            <button type="button" data-show-gender="no">Brother</button>
+            <button type="button" data-show-gender="yes">Sibling</button>
+            <button type="button" data-show-gender="yes">Relative</button>
+            <button type="button" data-show-gender="yes">Friend</button>
+          </div>
+        </div>
+
+        <!-- GENDER -->
+        <div class="field" id="genderField" style="display:none;">
+          <label>Gender <span>*</span></label>
+          <div class="gender-toggle" id="genderGroup">
+            <button type="button">Male</button>
+            <button type="button">Female</button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <script src="../JS/profile-setup.js"></script>
+
+</body>
+
+</html>

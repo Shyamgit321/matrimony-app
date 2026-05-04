@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | View Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../CSS/view-profile.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+    <a href="./user-home.html" class="back-btn">← Back</a>
+  </header>
+
+  <!-- PROFILE -->
+  <section class="profile-wrapper">
+
+    <div class="profile-card">
+
+      <!-- IMAGE -->
+      <div class="profile-image">
+        <img id="profileImg" src="../images/default-profile.png" alt="Profile" >
+      </div>
+
+      <!-- DETAILS -->
+      <div class="profile-details">
+
+        <h1 id="profileName">Name, Age</h1>
+        <p id="profileLocation">City • Profession</p>
+
+        <!-- MAIN INFO -->
+        <div class="info-grid">
+          <div><span>Religion</span><strong id="religion">—</strong></div>
+          <div><span>Mother Tongue</span><strong id="language">—</strong></div>
+          <div><span>Education</span><strong id="education">—</strong></div>
+          <div><span>Income</span><strong id="income">—</strong></div>
+        </div>
+
+        <!-- VIEW MORE BUTTON -->
+        <button id="toggleBtn" class="view-more-btn">View More ▼</button>
+
+        <!-- EXTRA INFO -->
+        <div id="extraInfo" class="extra-box" style="display:none;"></div>
+
+        <!-- SOCIAL -->
+        <div class="social-links" id="socialLinks"></div>
+
+        <!-- BUTTONS -->
+        <div class="action-buttons">
+          <button class="interest-btn" id="interestBtn">💖 Send Interest</button>
+          <button class="shortlist-btn" id="chatBtn">⭐ Chat</button>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script src="../JS/view-profile.js"></script>
+</body>
+
+</html>

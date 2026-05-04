@@ -1,0 +1,114 @@
+/* ================================
+   GLOBAL PAGE STYLE
+================================ */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8e7ee, #f3d7e6, #efd5ff);
+  font-family: "Inter", "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ================================
+   CARD (Glassmorphism)
+================================ */
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 40px 35px;
+  text-align: center;
+
+  box-shadow:
+     0 25px 45px rgba(0, 0, 0, 0.08),
+     inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ================================
+   CONTENT
+================================ */
+.icon {
+  font-size: 55px;
+  margin-bottom: 18px;
+}
+
+.card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+  color: #5b2b75;
+}
+
+.card p {
+  font-size: 15px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.card strong {
+  color: #7a288a;
+  font-weight: 600;
+}
+
+.redirect {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* ================================
+   ANIMATION
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+================================ */
+@media (max-width: 500px) {
+  .card {
+    padding: 30px 25px;
+    border-radius: 22px;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+
+  .icon {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    max-width: 520px;
+    padding: 55px 60px;
+  }
+
+  .card h1 {
+    font-size: 32px;
+  }
+
+  .icon {
+    font-size: 65px;
+  }
+}

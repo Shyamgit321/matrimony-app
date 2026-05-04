@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | All Matches</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../CSS/showmore.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+
+    <div class="nav-search">
+      <input type="text" placeholder="Search by name, city, profession…">
+    </div>
+
+    <a href="javascript:history.back()" class="back-btn">
+      ← Back
+    </a>
+  </header>
+
+  <!-- ================= HEADER ================= -->
+  <section class="page-header">
+    <h1>All Matches</h1>
+    <p>Profiles that match your preferences</p>
+  </section>
+
+  <!-- ================= MAIN ================= -->
+  <section class="matches-layout">
+
+    <!-- REPLACE ONLY FILTER PANEL PART -->
+
+    <!-- ===== FILTER PANEL ===== -->
+    <aside class="filter-panel">
+
+      <h3>Filter Matches</h3>
+
+      <!-- AGE -->
+      <div class="filter-group">
+        <label>Age</label>
+        <select id="ageSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="filter-group">
+        <label>Country</label>
+        <select id="countrySelect">
+          <option value="">Any</option>
+
+          <option value="india">India</option>
+          <option value="usa">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="canada">Canada</option>
+          <option value="australia">Australia</option>
+
+          <option value="uae">UAE</option>
+          <option value="saudi arabia">Saudi Arabia</option>
+          <option value="qatar">Qatar</option>
+          <option value="kuwait">Kuwait</option>
+
+          <option value="germany">Germany</option>
+          <option value="france">France</option>
+          <option value="italy">Italy</option>
+
+          <option value="singapore">Singapore</option>
+          <option value="malaysia">Malaysia</option>
+          <option value="nepal">Nepal</option>
+          <option value="bangladesh">Bangladesh</option>
+          <option value="sri lanka">Sri Lanka</option>
+        </select>
+      </div>
+
+      <!-- STATE -->
+      <div class="filter-group hidden" id="stateBox">
+        <label>State</label>
+        <select id="stateSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <!-- CITY -->
+      <div class="filter-group hidden" id="cityBox">
+        <label>City</label>
+        <select id="citySelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <!-- PROFESSION -->
+      <div class="filter-group">
+        <label>Profession</label>
+        <select id="professionSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <!-- RELIGION -->
+      <div class="filter-group">
+        <label>Religion</label>
+        <select id="religionSelect">
+          <option value="">Any</option>
+
+          <option value="hindu">Hindu</option>
+          <option value="muslim">Muslim</option>
+          <option value="christian">Christian</option>
+          <option value="sikh">Sikh</option>
+          <option value="jain">Jain</option>
+          <option value="buddhist">Buddhist</option>
+
+          <option value="parsi">Parsi</option>
+          <option value="jewish">Jewish</option>
+
+          <option value="spiritual">Spiritual</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- MARITAL STATUS -->
+      <div class="filter-group">
+        <label>Marital Status</label>
+        <select id="maritalSelect">
+          <option value="">Any</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Divorced">Divorced</option>
+        </select>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="filter-actions">
+        <button class="apply-btn">Apply</button>
+        <button class="clear-btn">Clear</button>
+      </div>
+
+    </aside>
+    <!-- ===== MATCHES ===== -->
+    <div class="matches-content">
+
+      <div class="match-grid" id="matchGrid">
+        <!-- Dynamic Cards -->
+      </div>
+
+      <div class="show-more-wrap">
+        <button class="show-more-btn" id="loadMoreBtn">Show More →</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="../JS/showmore.js"></script>
+
+</body>
+
+</html>

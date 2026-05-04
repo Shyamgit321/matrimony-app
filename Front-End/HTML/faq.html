@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | FAQ</title>
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="../CSS/faq.css">
+
+  <!-- ⭐ SEO JSON-LD FAQ SCHEMA ⭐ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I report suspicious activity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to the profile → Tap “Report User” → Choose reason."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my personal data safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use encrypted storage and secure authentication to protect your data."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="logo"><span class="logo-my">My</span><span class="logo-soul">Soul</span></div>
+  <a id="dynamicBack" class="back-btn">← Back</a>
+</header>
+
+<!-- TITLE -->
+<h1 class="page-title">Online Help - FAQ</h1>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="faqSearch" placeholder="Search for help...">
+</div>
+
+<!-- TABS WITH ICONS -->
+<div class="faq-tabs">
+  <button class="tab active" data-type="safety">
+    <i class="fas fa-shield-heart"></i> Safety
+  </button>
+
+  <button class="tab" data-type="profile">
+    <i class="fas fa-user-circle"></i> Profile
+  </button>
+
+  <button class="tab" data-type="account">
+    <i class="fas fa-lock"></i> Account
+  </button>
+
+  <button class="tab" data-type="matches">
+    <i class="fas fa-heart"></i> Matches
+  </button>
+</div>
+
+<!-- FAQ CONTAINER -->
+<div id="faqContainer">
+
+  <!-- SAFETY -->
+  <div class="faq-group" data-type="safety">
+    <h3 class="group-title">Safety & Security</h3>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I report suspicious activity?</div>
+      <div class="faq-answer">Go to the profile → Tap “Report User” → Choose reason.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is my personal data safe?</div>
+      <div class="faq-answer">We use encrypted storage and secure authentication to protect your data.</div>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="faq-group" data-type="profile" style="display:none;">
+    <h3 class="group-title">Profile Help</h3>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I update my profile?</div>
+      <div class="faq-answer">Go to Menu → Edit Profile → Save changes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Why is my photo not approved?</div>
+      <div class="faq-answer">Photos must be clear, recent, and show your face properly.</div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT -->
+  <div class="faq-group" data-type="account" style="display:none;">
+    <h3 class="group-title">Account Issues</h3>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I reset my password?</div>
+      <div class="faq-answer">Use the “Forgot Password” option → enter email → reset link sent.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I delete my account?</div>
+      <div class="faq-answer">Go to Settings → Account → Delete Account.</div>
+    </div>
+  </div>
+
+  <!-- MATCHES -->
+  <div class="faq-group" data-type="matches" style="display:none;">
+    <h3 class="group-title">Matches & Connections</h3>
+
+    <div class="faq-item">
+      <div class="faq-question">How are matches suggested?</div>
+      <div class="faq-answer">Matches are based on preferences, compatibility, and location.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Why am I not receiving matches?</div>
+      <div class="faq-answer">Update your preferences such as age, caste, or location to get better results.</div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../JS/faq.js"></script>
+
+</body>
+</html>

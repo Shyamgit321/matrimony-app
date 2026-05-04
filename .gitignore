@@ -1,0 +1,7 @@
+node_modules
+.env
+uploads
+
+Back-End/node_modules
+Back-End/.env
+Back-End/uploads

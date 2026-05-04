@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../CSS/user-home.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+
+  <div class="nav-search">
+    <input type="text" placeholder="Search by name, city, profession…">
+  </div>
+
+  <div class="premium-pill" onclick="goToPremium()">
+    ⭐ <span>Premium</span>
+  </div>
+
+  <div class="profile-menu">
+    <img id="navProfileImg" src="../images/default-profile.png" alt="Profile">
+
+    <div class="profile-dropdown">
+      <a href="./profile.html">My Profile</a>
+      <a href="./activity.html">Activity</a>
+      <a href="./settings.html">Settings</a>
+      <a href="javascript:void(0)" onclick="openLogoutPopup()">Logout</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+ <h1>
+   Welcome, <span id="userNameHero">User</span> 👋
+ </h1>
+
+  <p>Where hearts meet and families unite</p>
+
+  <div class="hero-actions">
+    <button class="primary-btn" id="viewMatchesBtn">View Matches</button>
+    <button class="secondary-btn" id="chatBtn">Chat</button>
+  </div>
+</section>
+
+<section class="stats premium-stats">
+  <div class="stat-card">
+    <div class="stat-icon">✔</div>
+    <h2>12K+</h2>
+    <p>Verified Profiles</p>
+  </div>
+
+  <div class="stat-card highlight">
+    <div class="stat-icon">💖</div>
+    <h2>5K+</h2>
+    <p>Successful Matches</p>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">★</div>
+    <h2>98%</h2>
+    <p>Genuine Users</p>
+  </div>
+</section>
+
+<section class="matches">
+  <h2 style="margin-bottom:20px;">Recommended Matches</h2>
+
+  <div class="match-grid" id="matchGrid"></div>
+
+  <div class="show-more-wrap">
+    <button class="show-more-btn" id="goToShowMore">
+      Show More →
+    </button>
+  </div>
+</section>
+
+<div id="user-footer"></div>
+<script src="../JS/loadFooter1.js"></script>
+<script src="../JS/user-home.js"></script>
+
+<div id="logoutModal" class="logout-modal">
+  <div class="logout-card">
+    <h3 class="logout-title">Logout</h3>
+    <p class="logout-text">Are you sure you want to logout from MySoul?</p>
+
+    <div class="logout-actions">
+      <button class="cancel-btn" id="cancelLogout">Cancel</button>
+      <button class="logout-btn" id="confirmLogout">Logout</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

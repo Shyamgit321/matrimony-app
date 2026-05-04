@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In | MySoul</title>
+
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/login.css">
+</head>
+
+<body data-page="login">
+
+<div id="header"></div>
+
+<section class="login-section">
+  <div class="login-card">
+
+    <h2>Sign In</h2>
+
+    <form id="loginForm">
+
+      <div class="input-box">
+        <span class="icon">👤</span>
+        <input type="text" id="loginId" placeholder="Email" required>
+      </div>
+
+      <div class="input-box">
+        <span class="icon">🔒</span>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+      </div>
+
+      <div class="options">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="forgotpassword.html">Forgot password?</a>
+      </div>
+
+      <p id="loginError" class="login-error"></p>
+
+      <button type="submit" class="sign-btn">Sign In</button>
+    </form>
+
+    <!-- 🔥 GOOGLE LOGIN SECTION -->
+    <div style="margin: 20px 0; text-align:center;">
+      <p style="margin-bottom:10px;">OR</p>
+      <div id="googleBtn"></div>
+    </div>
+
+    <p class="bottom-text">
+      New here? <a href="register.html">Create an Account</a>
+    </p>
+
+  </div>
+</section>
+
+<!-- 🔥 GOOGLE SCRIPT -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script src="../JS/loadHeader.js"></script>
+<script src="../JS/login.js"></script>
+
+</body>
+</html>

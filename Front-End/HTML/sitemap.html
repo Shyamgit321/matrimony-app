@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySoul | Sitemap</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #fff5f9, #fde7f3);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px;
+      padding: 16px 36px;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 34px rgba(201, 79, 92, 0.2);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+    }
+    .logo-my { color: #333; }
+    .logo-soul { color: #ff2fa3; }
+
+    .back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: 0.25s ease;
+}
+.back-btn:hover { background: #fde7f3; transform: translateX(-3px); }
+
+
+    /* PAGE CONTAINER */
+    .sitemap-box {
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.8);
+      border-radius: 22px;
+      padding: 30px 25px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 34px rgba(255,0,120,0.30);
+    }
+
+    h2 {
+      text-align: center;
+      color: #e83e8c;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #444;
+      font-size: 16px;
+    }
+
+    /* SECTION HEADINGS */
+    .section-title {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff2fa3;
+    }
+
+    /* LINKS LIST */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    ul li {
+      background: rgba(255,255,255,0.7);
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: #333;
+      box-shadow: 0 6px 18px rgba(255,0,120,0.15);
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    ul li:hover {
+      transform: translateX(6px);
+      background: #ffd7eb;
+    }
+
+    ul li i {
+      color: #ff2fa3;
+      font-size: 18px;
+    }
+
+    /* MOBILE */
+    @media(max-width:600px) {
+      .sitemap-box {
+        width: 92%;
+        padding: 20px;
+      }
+      ul li {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <!-- Icons -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+
+    <a id="dynamicBack" class="back-btn">← Back</a>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="sitemap-box">
+
+    <h2>Sitemap</h2>
+    <p class="intro">Quick navigation to all MySoul pages</p>
+
+    <!-- SECTION 1 -->
+    <div class="section-title">✨ Main Pages</div>
+    <ul>
+      <li onclick="goTo('home.html')"><i class="fas fa-house"></i> Home</li>
+      <li onclick="goTo('about.html')"><i class="fas fa-heart"></i> About Us</li>
+      <li onclick="goTo('blogs.html')"><i class="fas fa-newspaper"></i> Blogs</li>
+      <li onclick="goTo('media-pr.html')"><i class="fas fa-bullhorn"></i> Media & PR</li>
+    </ul>
+
+    <!-- SECTION 2 -->
+    <div class="section-title">❤️ User Features</div>
+    <ul>
+      <li onclick="goTo('user-home.html')"><i class="fas fa-user"></i> User Dashboard</li>
+      <li onclick="goTo('profile.html')"><i class="fas fa-id-card"></i> Profile</li>
+      <li onclick="goTo('edit-profile.html')"><i class="fas fa-edit"></i> Edit Profile</li>
+      <li onclick="goTo('activity.html')"><i class="fas fa-bell"></i> Activity</li>
+    </ul>
+
+    <!-- SECTION 3 -->
+    <div class="section-title">💬 Support</div>
+    <ul>
+      <li onclick="goTo('live-support.html')"><i class="fas fa-headset"></i> Live Support</li>
+      <li onclick="goTo('faq.html')"><i class="fas fa-question-circle"></i> FAQ</li>
+      <li onclick="goTo('contact-us.html')"><i class="fas fa-phone"></i> Contact Us</li>
+      <li onclick="goTo('sitemap.html')"><i class="fas fa-sitemap"></i> Sitemap</li>
+    </ul>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+
+    // AUTO BACK LOGIC — no need for ?from=user
+let ref = document.referrer;
+
+let backURL = "../HTML/home.html"; // DEFAULT
+
+if (ref.includes("user-home.html")) {
+  backURL = "../HTML/user-home.html";
+}
+
+document.getElementById("dynamicBack").href = backURL;
+
+  </script>
+
+</body>
+</html>

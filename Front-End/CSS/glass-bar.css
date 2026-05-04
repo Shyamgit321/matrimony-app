@@ -1,0 +1,149 @@
+/* =====================================
+   iOS 16 GLASS QUICK BAR (OVER HERO)
+===================================== */
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===============================
+   GLASS BAR OVERLAY
+================================ */
+.glass-quick-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 50;
+
+  width: calc(100% - 40px);
+  max-width: 1200px;
+
+  padding: 22px 20px;
+  border-radius: 22px;
+
+  /* iOS 16 glass look */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 210, 225, 0.38),
+    rgba(215, 190, 255, 0.28)
+  );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ===============================
+   FORM LAYOUT
+================================ */
+.glass-form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ===============================
+   INPUTS & SELECTS
+================================ */
+.glass-form input,
+.glass-form select {
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  font-size: 15px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.92);
+
+  min-width: 160px;
+}
+
+.glass-form input::placeholder {
+  color: #9a9a9a;
+}
+
+/* Country code width */
+.country-code {
+  min-width: 80px;
+}
+
+/* ===============================
+   BUTTON (CTA)
+================================ */
+.glass-btn {
+  height: 50px;
+  padding: 0 30px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #ffb6d9, #ffd8ec);
+  color: #6a155f;
+
+  box-shadow: 0 10px 25px rgba(255, 120, 180, 0.45);
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(255, 120, 180, 0.6);
+}
+
+/* ===============================
+   TABLET RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .glass-form {
+    flex-wrap: wrap;
+  }
+
+  .glass-form input,
+  .glass-form select,
+  .glass-btn {
+    width: 100%;
+  }
+
+  .glass-quick-bar {
+    bottom: 30px;
+    padding: 20px;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE (IMPORTANT)
+================================ */
+@media (max-width: 576px) {
+  .glass-quick-bar {
+    bottom: 20px;
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .glass-form {
+    gap: 12px;
+  }
+
+  .glass-form input,
+  .glass-form select {
+    height: 46px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .glass-btn {
+    height: 48px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+}

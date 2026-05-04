@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Live Support</title>
+  <link rel="stylesheet" href="../CSS/live-support.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =============== HEADER =============== -->
+<header class="navbar">
+  <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+  </div>
+  <a id="dynamicBack" class="back-btn">← Back</a>
+</header>
+
+<!-- =============== MAIN CONTAINER =============== -->
+<section class="support-container">
+
+  <h1 class="title">Live Support</h1>
+  <p class="subtitle">We are here to help you 24/7 💗</p>
+
+  <!-- SUPPORT OPTIONS -->
+  <div class="support-grid">
+
+    <!-- START CHAT -->
+    <div class="support-card" onclick="location.href='./support-chat.html'">
+      <i class="fas fa-comments icon"></i>
+      <h3>Instant Chat Support</h3>
+      <p>Chat with our AI assistant for instant answers.</p>
+      <button>Start Chat</button>
+    </div>
+
+    <!-- TICKET -->
+    <div class="support-card" onclick="location.href='./support-ticket.html'">
+      <i class="fas fa-envelope-open-text icon"></i>
+      <h3>Submit Ticket</h3>
+      <p>Raise your issue — we reply within 24 hours.</p>
+      <button>Submit Ticket</button>
+    </div>
+
+    <!-- CALL BACK -->
+    <div class="support-card" onclick="location.href='./support-callback.html'">
+      <i class="fas fa-phone-volume icon"></i>
+      <h3>Request Call Back</h3>
+      <p>Our team will call you for urgent support.</p>
+      <button>Request</button>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="../JS/live-support.js"></script>
+</body>
+</html>

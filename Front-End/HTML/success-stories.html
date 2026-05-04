@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySoul | Success Stories</title>
+
+  <link rel="stylesheet" href="../CSS/success-stories.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-my">My</span><span class="logo-soul">Soul</span>
+    </div>
+
+    <a id="dynamicBack" class="back-btn">← Back</a>
+  </header>
+
+
+  <!-- ================= SLIDER SECTION ================= -->
+  <div class="slider-container">
+    <h2 class="slider-title">Success Stories</h2>
+
+    <div class="slider" id="successSlider">
+
+      <!-- DEFAULT SLIDES -->
+      <div class="slide">
+        <img class="story-img" src="../images/default-couple.jpg">
+        <h3>Ritu ❤️ Raj</h3>
+        <p>We matched on MySoul and instantly connected. Today we're happily married.</p>
+      </div>
+
+      <div class="slide">
+        <img class="story-img" src="../images/default-couple.jpg">
+        <h3>Anjali ❤️ Rohit</h3>
+        <p>MySoul helped us find each other through shared values and perfect compatibility.</p>
+      </div>
+
+      <div class="slide">
+        <img class="story-img" src="../images/default-couple.jpg">
+        <h3>Komal ❤️ Karan</h3>
+        <p>A blessing in disguise! MySoul brought us closer and started a beautiful journey.</p>
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="slider-arrows">
+      <span class="arrow prev">❮</span>
+      <span class="arrow next">❯</span>
+    </div>
+
+    <!-- Dots -->
+    <div class="slider-dots"></div>
+  </div>
+
+
+  <!-- ================= SUBMIT STORY FORM ================= -->
+  <div class="story-form-box">
+    <h2>Share Your Story</h2>
+
+    <input type="text" id="coupleName" placeholder="Your Names (e.g., Ritu ❤️ Raj)">
+    <textarea id="coupleStory" placeholder="Write your success story..."></textarea>
+
+    <label>Upload Couple Photo</label>
+    <input type="file" id="storyPhoto" accept="image/*">
+    <img id="storyPreview" class="story-preview">
+
+    <button onclick="saveStory()">Submit Story</button>
+  </div>
+
+
+  <!-- JS FILE -->
+  <script src="../JS/success-stories.js"></script>
+
+</body>
+</html>

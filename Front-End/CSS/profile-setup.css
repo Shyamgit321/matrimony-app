@@ -1,0 +1,230 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff5f9, #fde7f3);
+}
+
+/* SECTION */
+.setup-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+/* CARD */
+.setup-card {
+  width: min(100%, 600px);
+  background: #f5f2f4ff;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+}
+
+/* TITLE */
+.setup-card h1 {
+  font-size: clamp(22px, 3vw, 32px);
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #666;
+  margin-bottom: 32px;
+}
+
+/* FIELD */
+.field {
+  margin-bottom: 26px;
+}
+
+.field label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.field span {
+  color: #e14b4b;
+}
+
+.field input {
+  width: 100%;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #d46a6a;
+}
+
+/* PROFILE OPTIONS */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.option-grid button {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.option-grid button.active {
+  background: #c85b5b;
+  color: #fff;
+  border-color: #c85b5b;
+}
+
+/* GENDER */
+.gender-toggle {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gender-toggle button {
+  flex: 1;
+  height: 50px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.gender-toggle button.active {
+  background: linear-gradient(135deg, #c85b5b, #d97b7b);
+  color: #fff;
+}
+
+/* SUBMIT */
+.submit-btn {
+  margin-top: 10px;
+  padding: 14px 34px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #c85b5b, #d97b7b);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .option-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ===============================
+   TOP RIGHT PINK GLASS (VISIBLE)
+================================ */
+.top-action-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  gap: 18px;
+
+  padding: 14px 18px;
+  border-radius: 22px;
+
+  background: rgba(254, 247, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow: 0 18px 40px rgba(255, 140, 170, 0.35);
+
+  z-index: 1000;
+}
+
+/* BUTTON BASE – DARKER PINK */
+.action-btn {
+  text-decoration: none;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  background: linear-gradient(135deg, #e98aa0, #d86b86);
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(216, 107, 134, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER – CLEAR & NOTICEABLE */
+.action-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f1a2b5, #e17893);
+
+  box-shadow: 0 14px 30px rgba(216, 107, 134, 0.75);
+}
+
+/* ACTIVE */
+.action-btn:active {
+  transform: scale(0.96);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .top-action-box {
+    top: 12px;
+    right: 12px;
+    padding: 12px 14px;
+    gap: 14px;
+  }
+
+  .action-btn {
+    font-size: 14px;
+    padding: 9px 22px;
+  }
+}
+/* ===============================
+   MOBILE FIX – RIGHT SIDE + NO OVERLAP
+================================ */
+@media (max-width: 768px) {
+  .top-action-box {
+    position: sticky;
+    top: 10px;
+    right: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+
+    width: fit-content;
+    z-index: 1000;
+  }
+
+  .setup-section {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .action-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+}

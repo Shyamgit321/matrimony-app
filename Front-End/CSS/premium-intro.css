@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #ffe0f1, #f8e9ff, #ffe8ef);
+  background-size: 200%;
+  animation: bgShift 10s infinite alternate;
+}
+
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  padding: 16px 36px;
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 34px rgba(201, 79, 92, 0.2);
+}
+
+/* ================= LOGO ================= */
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+}
+.logo-my {
+  color: #333;
+}
+.logo-soul {
+  color: #ff2fa3;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #c94f5c;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 18px rgba(201, 79, 92, 0.25);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: #fde7f3;
+  transform: translateX(-3px);
+}
+
+@keyframes bgShift {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* WRAPPER */
+.premium-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* GLASSY CARD */
+.premium-glass-card {
+  width: 380px;
+  padding: 28px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  border: 2px solid rgba(255,255,255,0.35);
+
+  box-shadow: 0 20px 45px rgba(255, 120, 160, 0.25);
+  animation: floatUp 2s ease;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* TITLE */
+.premium-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: #333;
+}
+
+.premium-title span {
+  color: #ff1b86;
+}
+
+.sub-text {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* BENEFIT ROW */
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 16px 0;
+}
+
+.benefit p {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+/* MY SOUL AURORA ICONS */
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  color: #fff;
+
+  box-shadow: 0 8px 14px rgba(0,0,0,0.15);
+}
+
+.aurora-purple {
+  background: linear-gradient(135deg, #a66bff, #d28aff);
+}
+.aurora-gold {
+  background: linear-gradient(135deg, #ffbe4d, #ff9a15);
+}
+.aurora-green {
+  background: linear-gradient(135deg, #4cd19c, #49e68f);
+}
+.aurora-blue {
+  background: linear-gradient(135deg, #6ea8ff, #4e7bff);
+}
+
+/* OFFER TEXT */
+.offer-text {
+  text-align: center;
+  margin: 25px 0;
+  color: #1e3d80;
+  font-weight: 600;
+}
+
+/* UPGRADE BUTTON */
+.mysoul-upgrade-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ff4f6d, #ff1b86);
+  color: #fff;
+
+  box-shadow: 0 10px 25px rgba(255, 70, 130, 0.4);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.mysoul-upgrade-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(255, 40, 120, 0.5);
+}

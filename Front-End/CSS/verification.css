@@ -1,0 +1,228 @@
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff5fa, #fde7f3);
+}
+
+/* ===============================
+   MAIN WRAPPER
+================================ */
+.verify-wrapper {
+  max-width: 1100px;
+  margin: 130px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #e83e8c;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* ===============================
+   GRID SYSTEM
+================================ */
+.verify-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* ===============================
+   GLASS CARD
+================================ */
+.verify-card {
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 32px rgba(255, 140, 170, 0.25);
+  text-align: center;
+}
+
+/* ===============================
+   ICON BOX
+================================ */
+.icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ff7db5, #ff3e8a);
+  box-shadow: 0 8px 24px rgba(255, 62, 138, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.verify-card h3 {
+  font-size: 22px;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+.verify-card p {
+  font-size: 15px;
+  color: #666;
+  margin: 10px 0 18px;
+}
+
+/* ===============================
+   PREMIUM BUTTON (BOX RESTORED)
+================================ */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #c94f5c, #e17893);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 10px 26px rgba(201, 79, 92, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d85d6d, #e98aa0);
+  box-shadow: 0 14px 36px rgba(201, 79, 92, 0.45);
+}
+
+/* ===============================
+   1:1 SQUARE PREVIEW BOX
+================================ */
+.preview-img,
+#cameraStream,
+#selfieResult {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  object-fit: cover;
+  margin-top: 14px;
+  background: #f7dce7;
+}
+
+/* ===============================
+   DELETE BUTTON
+================================ */
+.delete-btn {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #c94f5c, #e17893);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #d85d6d, #e98aa0);
+}
+
+/* ===============================
+   DOC NAME TEXT
+================================ */
+.doc-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ===============================
+   AUDIO PLAYER
+================================ */
+audio {
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* ===============================
+   CONTINUE BUTTON
+================================ */
+.continue-btn {
+  margin-top: 45px;
+  padding: 18px 44px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #c94f5c, #e17893);
+  color: white;
+  box-shadow: 0 14px 36px rgba(201, 79, 92, 0.3);
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d85d6d, #e98aa0);
+}
+
+/* ===============================
+   TOP ACTION BOX
+================================ */
+/* ===============================
+   TOP RIGHT GLASS BUTTONS
+================================ */
+.top-action-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 18px;
+  padding: 14px 18px;
+  border-radius: 22px;
+  background: rgba(254, 247, 249, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 40px rgba(255, 140, 170, 0.35);
+  z-index: 1000;
+}
+
+.action-btn {
+  text-decoration: none;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e98aa0, #d86b86);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(216, 107, 134, 0.55);
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .verify-wrapper {
+    margin: 110px 20px;
+  }
+}
