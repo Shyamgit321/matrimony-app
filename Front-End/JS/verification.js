@@ -224,7 +224,7 @@ continueBtn.addEventListener("click", async () => {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/complete-verification",
+      `${API_URL}/api/auth/complete-verification`,
       {
         method: "PUT",
         headers: {

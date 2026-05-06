@@ -15,7 +15,7 @@ headerName.innerText = decodeURIComponent(name || "User");
 headerImg.src = decodeURIComponent(img || "../images/default-profile.png");
 
 // ================= SOCKET =================
-const socket = io("http://localhost:5000");
+const socket = io(`${API_URL}`);
 const myId = JSON.parse(atob(token.split(".")[1])).id;
 
 socket.emit("join", myId);
@@ -86,7 +86,7 @@ function addOtherMessage(text) {
 // ================= LOAD MESSAGES =================
 async function loadMessages() {
   try {
-    const res = await fetch(`http://localhost:5000/api/chat/${receiverId}`, {
+    const res = await fetch(`${API_URL}/api/chat/${receiverId}`, {
       headers: { Authorization: "Bearer " + token }
     });
 
@@ -106,7 +106,7 @@ async function loadMessages() {
     });
 
     // mark seen in DB
-    await fetch(`http://localhost:5000/api/chat/seen/${receiverId}`, {
+    await fetch(`${API_URL}/api/chat/seen/${receiverId}`, {
       method: "PUT",
       headers: { Authorization: "Bearer " + token }
     });
@@ -125,7 +125,7 @@ async function sendMessage() {
   const text = chatMsg.value.trim();
   if (!text) return;
 
-  const res = await fetch("http://localhost:5000/api/chat/send", {
+  const res = await fetch(`${API_URL}/api/chat/send`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -156,7 +156,7 @@ socket.on("receiveMessage", (data) => {
 
   addOtherMessage(data.text);
 
-  fetch(`http://localhost:5000/api/chat/seen/${receiverId}`, {
+  fetch(`${API_URL}/api/chat/seen/${receiverId}`, {
     method: "PUT",
     headers: { Authorization: "Bearer " + token }
   });
@@ -211,7 +211,7 @@ window.addEventListener("click", () => {
 
 // ================= EDIT =================
 async function editMessage(id, text) {
-  await fetch(`http://localhost:5000/api/chat/edit/${id}`, {
+  await fetch(`${API_URL}/api/chat/edit/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -225,7 +225,7 @@ async function editMessage(id, text) {
 
 // ================= DELETE =================
 async function deleteMessage(id) {
-  await fetch(`http://localhost:5000/api/chat/delete/${id}`, {
+  await fetch(`${API_URL}/api/chat/delete/${id}`, {
     method: "DELETE",
     headers: { Authorization: "Bearer " + token }
   });

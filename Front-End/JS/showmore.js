@@ -60,8 +60,8 @@ async function loadMatches(search = "") {
   try {
 
     const url = search
-      ? `http://localhost:5000/api/profile/matches?search=${search}`
-      : `http://localhost:5000/api/profile/matches`;
+      ? `${API_URL}/api/profile/matches?search=${search}`
+      : `${API_URL}/api/profile/matches`;
 
     const res = await fetch(url, {
       headers: { Authorization: "Bearer " + token }
@@ -92,7 +92,7 @@ async function loadMatchesWithFilter(query = "") {
   try {
 
     const res = await fetch(
-      `http://localhost:5000/api/profile/matches${query}`,
+      `${API_URL}/api/profile/matches${query}`,
       {
         headers: { Authorization: "Bearer " + token }
       }
@@ -132,7 +132,7 @@ function render() {
   slice.forEach(user => {
 
     const img = user.profileImage
-      ? "http://localhost:5000" + user.profileImage
+      ? `${API_URL}` + user.profileImage
       : "../images/default-profile.png";
 
     const age = user.dob

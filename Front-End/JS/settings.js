@@ -32,7 +32,7 @@ saveBtn.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/change-password", {
+    const res = await fetch(`${API_URL}/api/auth/change-password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +103,7 @@ if (delBtn) {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/delete-profile", {
+      const res = await fetch(`${API_URL}/api/auth/delete-profile`, {
         method: "DELETE",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token")
@@ -148,7 +148,7 @@ const photoMatchOnly = document.getElementById("photoMatch").checked;
 console.log({ mobile, photoBlur, photoMatchOnly, lastSeen, interest });
 
 try {
-const res = await fetch("http://localhost:5000/api/auth/privacy", {
+const res = await fetch(`${API_URL}/api/auth/privacy`, {
 method: "PUT",
 headers: {
 "Content-Type": "application/json",
@@ -193,7 +193,7 @@ btn.classList.add("active");
 
 async function loadPrivacy() {
 try {
-const res = await fetch("http://localhost:5000/api/auth/profile", {
+const res = await fetch(`${API_URL}/api/auth/profile`, {
 headers: {
 Authorization: "Bearer " + localStorage.getItem("token")
 }

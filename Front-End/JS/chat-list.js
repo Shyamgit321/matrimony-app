@@ -13,10 +13,10 @@ async function loadAll() {
   try {
 
     const [chatRes, interestRes] = await Promise.all([
-      fetch("http://localhost:5000/api/chat/list/all", {
+      fetch(`${API_URL}/api/chat/list/all`, {
         headers: { Authorization: "Bearer " + token }
       }),
-      fetch("http://localhost:5000/api/interest/received", {
+      fetch(`${API_URL}/api/interest/received`, {
         headers: { Authorization: "Bearer " + token }
       })
     ]);
@@ -79,7 +79,7 @@ async function loadAll() {
     all.forEach(item => {
 
       const img = item.image
-        ? "http://localhost:5000" + item.image
+        ? `${API_URL}` + item.image
         : "../images/default-profile.png";
 
       let message = "";

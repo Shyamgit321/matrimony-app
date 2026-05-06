@@ -52,7 +52,7 @@ LOAD PROFILE
 =============================== */
 async function loadProfile() {
   try {
-    const res = await fetch("http://localhost:5000/api/auth/profile", {
+    const res = await fetch(`${API_URL}/api/auth/profile`, {
       headers: { Authorization: "Bearer " + token }
     });
 
@@ -63,7 +63,7 @@ async function loadProfile() {
     const imgSrc = user.profileImage?.startsWith("http")
       ? user.profileImage
       : user.profileImage
-        ? "http://localhost:5000" + user.profileImage
+        ? `${API_URL}` + user.profileImage
         : "../images/default-profile.png";
 
     editPhotoPreview.src = imgSrc;
@@ -137,7 +137,7 @@ photoInput.addEventListener("change", async () => {
   formData.append("image", file);
 
   try {
-    const res = await fetch("http://localhost:5000/api/profile/upload-image", {
+    const res = await fetch(`${API_URL}/api/profile/upload-image`, {
       method: "POST",
       headers: { Authorization: "Bearer " + token },
       body: formData
@@ -150,7 +150,7 @@ photoInput.addEventListener("change", async () => {
       return;
     }
 
-    editPhotoPreview.src = "http://localhost:5000" + data.image;
+    editPhotoPreview.src = `${API_URL}` + data.image;
 
     // reset delete flag
     isPhotoDeleted = false;
@@ -236,7 +236,7 @@ async function saveAll() {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/api/profile/update-all", {
+    const res = await fetch(`${API_URL}/api/profile/update-all`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

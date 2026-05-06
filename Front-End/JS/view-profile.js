@@ -19,7 +19,7 @@ LOAD PROFILE
 =============================== */
 async function loadProfile() {
   try {
-    const res = await fetch(`http://localhost:5000/api/profile/${id}`, {
+    const res = await fetch(`${API_URL}/api/profile/${id}`, {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -31,7 +31,7 @@ async function loadProfile() {
     // IMAGE
     document.getElementById("profileImg").src =
       user.profileImage
-        ? "http://localhost:5000" + user.profileImage
+        ? `${API_URL}` + user.profileImage
         : "../images/default-profile.png";
 
     // AGE
@@ -105,7 +105,7 @@ CHECK INTEREST STATUS
 =============================== */
 async function checkInterest() {
   try {
-    const res = await fetch(`http://localhost:5000/api/interest/check/${id}`, {
+    const res = await fetch(`${API_URL}/api/interest/check/${id}`, {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -150,7 +150,7 @@ CHAT BUTTON
 =============================== */
 document.getElementById("chatBtn").addEventListener("click", async () => {
   try {
-    const res = await fetch(`http://localhost:5000/api/profile/${id}`, {
+    const res = await fetch(`${API_URL}/api/profile/${id}`, {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -161,7 +161,7 @@ document.getElementById("chatBtn").addEventListener("click", async () => {
     const name = encodeURIComponent(user.name || "User");
     const image = encodeURIComponent(
       user.profileImage
-        ? "http://localhost:5000" + user.profileImage
+        ? `${API_URL}` + user.profileImage
         : "../images/default-profile.png"
     );
 
@@ -184,7 +184,7 @@ interestBtn.addEventListener("click", async () => {
     // REMOVE INTEREST
     if (interestId) {
 
-      await fetch(`http://localhost:5000/api/interest/delete/${interestId}`, {
+      await fetch(`${API_URL}/api/interest/delete/${interestId}`, {
         method: "DELETE",
         headers: {
           Authorization: "Bearer " + token
@@ -197,7 +197,7 @@ interestBtn.addEventListener("click", async () => {
     }
 
     // SEND INTEREST
-    const res = await fetch("http://localhost:5000/api/interest/send", {
+    const res = await fetch(`${API_URL}/api/interest/send`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

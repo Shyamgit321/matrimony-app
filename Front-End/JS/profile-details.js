@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // FETCH RELIGIONS
   // ===============================
-  fetch("http://localhost:5000/api/master/religions")
+  fetch(`${API_URL}/api/master/religions`)
   .then(res => res.json())
   .then(data => {
     data.forEach(r => {
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     casteDropdown.innerHTML = "";
     casteInput.disabled = false;
 
-    fetch(`http://localhost:5000/api/master/castes/${religionSelect.value}`)
+    fetch(`${API_URL}/api/master/castes/${religionSelect.value}`)
     .then(res => res.json())
     .then(data => {
 
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // FETCH MOTHER TONGUE
   // ===============================
-  fetch("http://localhost:5000/api/master/mother-tongues")
+  fetch(`${API_URL}/api/master/mother-tongues`)
   .then(res => res.json())
   .then(data => {
     data.forEach(item => {
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // FETCH USER PROFILE (AUTO LOAD)
   // ===============================
-  fetch("http://localhost:5000/api/auth/profile", {
+  fetch(`${API_URL}/api/auth/profile`, {
     headers: { Authorization: "Bearer " + token }
   })
   .then(res => res.json())
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
       religionSelect.value = user.religion;
       casteInput.disabled = false;
 
-      fetch(`http://localhost:5000/api/master/castes/${user.religion}`)
+      fetch(`${API_URL}/api/master/castes/${user.religion}`)
       .then(res => res.json())
       .then(data => {
 
@@ -329,7 +329,7 @@ maritalButtons.forEach(btn => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/profile/profile-details",
+        `${API_URL}/api/profile/profile-details`,
         {
           method: "PUT",
           headers: {

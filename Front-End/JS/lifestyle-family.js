@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      AUTO LOAD USER DATA
   ============================== */
-  fetch("http://localhost:5000/api/auth/profile", {
+  fetch(`${API_URL}/api/auth/profile`, {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/profile/family-details",
+        `${API_URL}/api/profile/family-details`,
         {
           method: "PUT",
           headers: {

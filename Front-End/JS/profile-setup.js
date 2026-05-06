@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const emailInput = document.getElementById("email");
 
-  fetch("http://localhost:5000/api/auth/profile", {
+  fetch(`${API_URL}/api/auth/profile`, {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -108,7 +108,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/profile/setup-step1",
+      `${API_URL}/api/profile/setup-step1`,
       {
         method: "PUT",
         headers: {
