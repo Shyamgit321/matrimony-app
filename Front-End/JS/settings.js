@@ -57,7 +57,7 @@ saveBtn.addEventListener("click", async () => {
     localStorage.removeItem("token");
 
     // redirect to login
-    window.location.href = "../HTML/login.html";
+    window.location.href = "/login.html";
 
   } catch (err) {
     console.log(err);
@@ -123,7 +123,7 @@ if (delBtn) {
       alert("Profile deleted successfully 🗑️");
 
       // redirect
-      window.location.href = "../HTML/home.html";
+      window.location.href = "/home.html";
 
     } catch (err) {
       console.log(err);

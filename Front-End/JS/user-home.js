@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const showMoreBtn = document.getElementById("goToShowMore");
   if (showMoreBtn) {
     showMoreBtn.addEventListener("click", () => {
-      window.location.href = "../HTML/showmore.html";
+      window.location.href = "/showmore.html";
     });
   }
 
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatBtn = document.getElementById("chatBtn");
   if (chatBtn) {
     chatBtn.addEventListener("click", () => {
-      window.location.href = "../HTML/chat-list.html";
+      window.location.href = "/chat-list.html";
     });
   }
 

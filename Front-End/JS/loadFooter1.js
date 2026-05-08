@@ -1,4 +1,4 @@
-fetch("../HTML/user-footer.html")
+fetch("/user-footer.html")
   .then(res => res.text())
   .then(html => {
     document.getElementById("user-footer").innerHTML = html;
