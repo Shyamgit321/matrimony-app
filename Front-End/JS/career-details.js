@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===============================
      AUTO LOAD USER DATA
   ================================= */
-  fetch(`${API_URI}/api/auth/profile`, {
+  fetch(`${API_URL}/api/auth/profile`, {
     headers: {
       Authorization: "Bearer " + token
     }
