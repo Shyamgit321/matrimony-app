@@ -29,11 +29,9 @@ async function loadProfile() {
     if (!res.ok) return;
 
     // IMAGE
-    document.getElementById("profileImg").src =
-      user.profileImage
-        ? `${API_URL}` + user.profileImage
-        : "../images/default-profile.png";
-
+    const imgSrc = user.profileImage
+      ? user.profileImage
+      : "/images/default-profile.png";
     // AGE
     let age = "--";
     if (user.dob) {

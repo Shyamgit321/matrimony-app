@@ -19,11 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("PROFILE DATA:", user);
 
       // IMAGE FIX
-      const imgSrc = user.profileImage?.startsWith("http")
+      const imgSrc = user.profileImage
         ? user.profileImage
-        : user.profileImage
-          ? `${API_URL}` + user.profileImage
-          : "../images/default-profile.png";
+        : "/images/default-profile.png";
 
       // CORRECT ID
       const img = document.getElementById("profilePreview");

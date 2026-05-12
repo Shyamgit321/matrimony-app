@@ -78,9 +78,9 @@ async function loadAll() {
     // RENDER
     all.forEach(item => {
 
-      const img = item.image
-        ? `${API_URL}` + item.image
-        : "../images/default-profile.png";
+      const imgSrc = user.profileImage
+        ? user.profileImage
+        : "/images/default-profile.png";
 
       let message = "";
 

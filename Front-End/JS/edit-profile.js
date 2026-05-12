@@ -60,11 +60,9 @@ async function loadProfile() {
     if (!res.ok) return;
 
     // IMAGE FIX (Google + Local)
-    const imgSrc = user.profileImage?.startsWith("http")
+    const imgSrc = user.profileImage
       ? user.profileImage
-      : user.profileImage
-        ? `${API_URL}` + user.profileImage
-        : "../images/default-profile.png";
+      : "/images/default-profile.png";
 
     editPhotoPreview.src = imgSrc;
 
@@ -115,10 +113,10 @@ for (let d = 1; d <= 31; d++) {
   dobDate.innerHTML += `<option value="${d}">${d}</option>`;
 }
 
-["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-.forEach((m, i) => {
-  dobMonth.innerHTML += `<option value="${i + 1}">${m}</option>`;
-});
+["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  .forEach((m, i) => {
+    dobMonth.innerHTML += `<option value="${i + 1}">${m}</option>`;
+  });
 
 for (let y = 2005; y >= 1950; y--) {
   dobYear.innerHTML += `<option value="${y}">${y}</option>`;
@@ -204,7 +202,7 @@ async function saveAll() {
     return;
   }
 
-  const dob = `${dobYear.value}-${dobMonth.value.padStart(2,"0")}-${dobDate.value.padStart(2,"0")}`;
+  const dob = `${dobYear.value}-${dobMonth.value.padStart(2, "0")}-${dobDate.value.padStart(2, "0")}`;
 
   const data = {
     fullName: e_name.value,

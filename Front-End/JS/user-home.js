@@ -26,11 +26,9 @@ async function loadUser() {
     console.log("HOME USER:", user);
 
     // IMAGE FIX
-    const imgSrc = user.profileImage?.startsWith("http")
+    const imgSrc = user.profileImage
       ? user.profileImage
-      : user.profileImage
-        ? `${API_URL}` + user.profileImage
-        : "../images/default-profile.png";
+      : "/images/default-profile.png";
 
     // CORRECT ID
     const navImg = document.getElementById("navProfileImg");

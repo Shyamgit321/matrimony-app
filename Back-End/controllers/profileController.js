@@ -148,64 +148,85 @@ exports.updateFullProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
 
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+    ```
+if (!user) {
+  return res.status(404).json({ message: "User not found" });
+}
 
-    // ===============================
-    //  PHOTO DELETE FIX
-    // ===============================
-    if (req.body.deletePhoto === true) {
-      user.profileImage = "";
-    }
+// ===============================
+// PHOTO DELETE
+// ===============================
+if (req.body.deletePhoto === "true") {
+  user.profileImage = "";
+}
 
-    // ===============================
-    // BASIC
-    // ===============================
-    if (req.body.fullName) user.name = req.body.fullName;
-    if (req.body.gender) user.gender = req.body.gender;
-    if (req.body.dob) user.dob = req.body.dob;
+// ===============================
+// NEW CLOUDINARY IMAGE
+// ===============================
+if (req.file) {
+  user.profileImage = req.file.path;
+}
 
-    // MATCH PREF
-    if (req.body.matchPreference) {
-      user.matchPreference = req.body.matchPreference;
-    }
+// ===============================
+// BASIC
+// ===============================
+if (req.body.fullName) user.name = req.body.fullName;
+if (req.body.gender) user.gender = req.body.gender;
+if (req.body.dob) user.dob = req.body.dob;
 
-    // ===============================
-    // PERSONAL
-    // ===============================
-    if (req.body.religion) user.religion = req.body.religion;
-    if (req.body.caste) user.caste = req.body.caste;
-    if (req.body.motherTongue) user.motherTongue = req.body.motherTongue;
-    if (req.body.maritalStatus) user.maritalStatus = req.body.maritalStatus;
-    if (req.body.height) user.height = req.body.height;
+// MATCH PREF
+if (req.body.matchPreference) {
+  user.matchPreference = req.body.matchPreference;
+}
 
-    // ===============================
-    // CAREER
-    // ===============================
-    if (req.body.city) user.city = req.body.city;
-    if (req.body.occupation) user.occupation = req.body.occupation;
-    if (req.body.annualIncome) user.annualIncome = req.body.annualIncome;
-    if (req.body.about) user.about = req.body.about;
-    if (req.body.highestDegree) user.highestDegree = req.body.highestDegree;
+// ===============================
+// PERSONAL
+// ===============================
+if (req.body.religion) user.religion = req.body.religion;
+if (req.body.caste) user.caste = req.body.caste;
+if (req.body.motherTongue) user.motherTongue = req.body.motherTongue;
+if (req.body.maritalStatus) user.maritalStatus = req.body.maritalStatus;
+if (req.body.height) user.height = req.body.height;
 
-    // ===============================
-    // FAMILY
-    // ===============================
-    if (req.body.familyType) user.familyType = req.body.familyType;
-    if (req.body.fatherOccupation) user.fatherOccupation = req.body.fatherOccupation;
-    if (req.body.motherOccupation) user.motherOccupation = req.body.motherOccupation;
-    if (req.body.brotherCount) user.brotherCount = req.body.brotherCount;
-    if (req.body.sisterCount) user.sisterCount = req.body.sisterCount;
+// ===============================
+// CAREER
+// ===============================
+if (req.body.city) user.city = req.body.city;
+if (req.body.occupation) user.occupation = req.body.occupation;
+if (req.body.annualIncome) user.annualIncome = req.body.annualIncome;
+if (req.body.about) user.about = req.body.about;
+if (req.body.highestDegree) user.highestDegree = req.body.highestDegree;
 
-    await user.save();
+// ===============================
+// FAMILY
+// ===============================
+if (req.body.familyType) user.familyType = req.body.familyType;
+if (req.body.fatherOccupation) {
+  user.fatherOccupation = req.body.fatherOccupation;
+}
 
-    res.json({
-      message: "Profile updated successfully",
-      user
-    });
+if (req.body.motherOccupation) {
+  user.motherOccupation = req.body.motherOccupation;
+}
+
+if (req.body.brotherCount) {
+  user.brotherCount = req.body.brotherCount;
+}
+
+if (req.body.sisterCount) {
+  user.sisterCount = req.body.sisterCount;
+}
+
+await user.save();
+
+res.json({
+  message: "Profile updated successfully",
+  user,
+});
+```
 
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
