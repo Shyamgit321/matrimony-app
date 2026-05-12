@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.href = "login.html";
+window.location.href = "login.html";
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -18,10 +18,10 @@ const interestBtn = document.getElementById("interestBtn");
 LOAD PROFILE
 =============================== */
 async function loadProfile() {
-  try {
+try {
 
-    
-const res = await fetch(`${ API_URL } /api/profile / ${ id } `, {
+
+const res = await fetch(`${API_URL}/api/profile/${id}`, {
   headers: {
     Authorization: "Bearer " + token,
   },
@@ -55,10 +55,10 @@ if (user.dob) {
 // BASIC
 // ===============================
 document.getElementById("profileName").innerText =
-  `${ user.name || "User" }, ${ age } `;
+  `${user.name || "User"}, ${age}`;
 
 document.getElementById("profileLocation").innerText =
-  `${ user.city || "—" } • ${ user.occupation || "—" } `;
+  `${user.city || "—"} • ${user.occupation || "—"}`;
 
 // ===============================
 // MAIN INFO
@@ -79,7 +79,7 @@ document.getElementById("income").innerText =
    EXTRA DATA
 =============================== */
 const extra = `
-      < div class="extra-grid" >
+  <div class="extra-grid">
 
     <div><b>Gender:</b> ${user.gender || "—"}</div>
     <div><b>Height:</b> ${user.height || "—"}</div>
@@ -106,20 +106,20 @@ const extra = `
     <div><b>Brothers:</b> ${user.brotherCount || "0"}</div>
     <div><b>Sisters:</b> ${user.sisterCount || "0"}</div>
 
-  </div >
+  </div>
 
-      <div class="about-box">
-        <b>About:</b>
-        <p>${user.about || "—"}</p>
-      </div>
-    `;
+  <div class="about-box">
+    <b>About:</b>
+    <p>${user.about || "—"}</p>
+  </div>
+`;
 
 document.getElementById("extraInfo").innerHTML = extra;
 
 
-  } catch (err) {
-    console.log(err);
-  }
+} catch (err) {
+console.log(err);
+}
 }
 
 loadProfile();
@@ -128,11 +128,11 @@ loadProfile();
 CHECK INTEREST STATUS
 =============================== */
 async function checkInterest() {
-  try {
+try {
 
-    
+
 const res = await fetch(
-  `${ API_URL } /api/interest / check / ${ id } `,
+  `${API_URL}/api/interest/check/${id}`,
   {
     headers: {
       Authorization: "Bearer " + token,
@@ -151,9 +151,9 @@ else {
 }
 
 
-  } catch (err) {
-    console.log(err);
-  }
+} catch (err) {
+console.log(err);
+}
 }
 
 checkInterest();
@@ -166,34 +166,34 @@ const extraBox = document.getElementById("extraInfo");
 
 toggleBtn.addEventListener("click", () => {
 
-  if (extraBox.style.display === "none") {
+if (extraBox.style.display === "none") {
 
-    
+
 extraBox.style.display = "block";
 toggleBtn.innerText = "View Less ▲";
 
 
-  } else {
+} else {
 
-    
+
 extraBox.style.display = "none";
 toggleBtn.innerText = "View More ▼";
 
 
-  }
+}
 });
 
 /* ===============================
 CHAT BUTTON
 =============================== */
 document.getElementById("chatBtn")
-  .addEventListener("click", async () => {
+.addEventListener("click", async () => {
 
-    
+
 try {
 
   const res = await fetch(
-    `${ API_URL } /api/profile / ${ id } `,
+    `${API_URL}/api/profile/${id}`,
     {
       headers: {
         Authorization: "Bearer " + token,
@@ -212,44 +212,45 @@ try {
       ? user.profileImage
       : "/images/default-profile.png"
   );
+  document.getElementById("profileImage").src = imgSrc;
 
   window.location.href =
-    `./ chat.html ? id = ${ id }& name=${ name }& img=${ image } `;
+    `./chat.html?id=${id}&name=${name}&img=${image}`;
 
 } catch (err) {
   console.log(err);
 }
 
 
-  });
+});
 
 /* ===============================
 INTEREST BUTTON (TOGGLE)
 =============================== */
 interestBtn.addEventListener("click", async () => {
 
-  try {
+try {
 
-    
+
 // REMOVE INTEREST
 if (interestId) {
 
   await fetch(
-    `${ API_URL } /api/interest / delete/${interestId}`,
+    `${API_URL}/api/interest/delete/${interestId}`,
     {
       method: "DELETE",
 
-        headers: {
+      headers: {
         Authorization: "Bearer " + token,
       },
     }
   );
 
-interestId = null;
+  interestId = null;
 
-interestBtn.innerText = "💖 Send Interest";
+  interestBtn.innerText = "💖 Send Interest";
 
-return;
+  return;
 }
 
 // SEND INTEREST
