@@ -212,7 +212,7 @@ try {
       ? user.profileImage
       : "/images/default-profile.png"
   );
-  document.getElementById("profileImage").src = imgSrc;
+  document.getElementById("profileImg").src = imgSrc;
 
   window.location.href =
     `./chat.html?id=${id}&name=${name}&img=${image}`;
