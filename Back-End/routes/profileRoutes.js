@@ -135,30 +135,45 @@ router.get("/matches", protect, async (req, res) => {
 
 
 /* ===============================
-   UPLOAD PROFILE IMAGE
+UPLOAD PROFILE IMAGE
 ================================ */
-router.post("/upload-image", protect, upload.single("image"), async (req, res) => {
-  try {
+router.post(
+"/upload-image",
+protect,
+upload.single("image"),
 
-    if (!req.file) {
-      return res.status(400).json({ message: "No file uploaded" });
-    }
-
-    const imagePath = "/uploads/" + req.file.filename;
-
-    await User.findByIdAndUpdate(req.user.id, {
-      profileImage: imagePath
+async (req, res) => {
+try {
+  if (!req.file) {
+    return res.status(400).json({
+      message: "No file uploaded",
     });
-
-    res.json({
-      message: "Image uploaded successfully",
-      image: imagePath
-    });
-
-  } catch (error) {
-    res.status(500).json({ message: error.message });
   }
-});
+
+  // ===============================
+  // CLOUDINARY IMAGE URL
+  // ===============================
+  const imagePath = req.file.path;
+
+  await User.findByIdAndUpdate(req.user.id, {
+    profileImage: imagePath,
+  });
+
+  res.json({
+    message: "Image uploaded successfully",
+    image: imagePath,
+  });
+
+} catch (error) {
+  console.log(error);
+
+  res.status(500).json({
+    message: error.message,
+  });
+}
+}
+);
+
 
 
 /* ===============================
