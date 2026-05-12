@@ -8,19 +8,17 @@ const cloudinary = require("../config/cloudinary");
 const storage = new CloudinaryStorage({
 cloudinary: cloudinary,
 
-params: async (req, file) => {
-return {
+params: async (req, file) => ({
 folder: "mysoul_profiles",
 
-  allowed_formats: ["jpg", "jpeg", "png", "webp"],
+public_id:
+  Date.now() +
+  "-" +
+  file.originalname.replace(/\s+/g, ""),
 
-  public_id:
-    Date.now() +
-    "-" +
-    file.originalname.replace(/\s+/g, ""),
-};
+resource_type: "image",
 
-},
+}),
 });
 
 // ===============================
@@ -45,9 +43,12 @@ cb(new Error("Only JPG, PNG, WEBP images allowed"), false);
 // MULTER CONFIG
 // ===============================
 const upload = multer({
-storage: storage,
-fileFilter: fileFilter,
-limits: { fileSize: 2 * 1024 * 1024 },
+storage,
+fileFilter,
+
+limits: {
+fileSize: 2 * 1024 * 1024,
+},
 });
 
 module.exports = upload;
