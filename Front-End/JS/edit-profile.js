@@ -56,7 +56,7 @@ Authorization: "Bearer " + token,
 },
 });
 
-```
+
 const user = await res.json();
 
 if (!res.ok) return;
@@ -115,7 +115,6 @@ if (user.dob && user.dob !== "None") {
     dobYear.value = String(d.getFullYear());
   }
 }
-```
 
 } catch (err) {
 console.log("Load error:", err);
