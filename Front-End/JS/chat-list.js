@@ -78,49 +78,68 @@ async function loadAll() {
     // RENDER
     all.forEach(item => {
 
-      const imgSrc = user.profileImage
-        ? user.profileImage
+      // ===============================
+      // IMAGE
+      // ===============================
+      const imgSrc = item.image
+        ? item.image
         : "/images/default-profile.png";
 
       let message = "";
 
-      // chat message
+      // ===============================
+      // CHAT MESSAGE
+      // ===============================
       if (item.lastMessage) {
         message = item.lastMessage;
       }
 
-      // interest add
+      // ===============================
+      // INTEREST MESSAGE
+      // ===============================
       if (item.hasInterest) {
+
+
         if (message) {
           message = "💖 • " + message;
         } else {
           message = "💖 Sent you an interest";
         }
+
+
       }
 
       const div = document.createElement("div");
+
       div.className = "chat-item";
 
-      div.innerHTML = `
-        <img src="${img}" class="chat-img">
+      div.innerHTML = ` <img src="${imgSrc}" class="chat-img">
 
-        <div class="chat-info">
-          <h3>${item.name}</h3>
-          <p>${message}</p>
-        </div>
+
+        < div class="chat-info" >
+  <h3>${item.name}</h3>
+  <p>${message}</p>
+</div >
 
         <span class="chat-time">
           ${new Date(item.time).toLocaleDateString()}
         </span>
-      `;
+      
+
+`;
 
       div.onclick = () => {
+
+
         window.location.href =
-          `./chat.html?id=${item.userId}&name=${encodeURIComponent(item.name)}&img=${encodeURIComponent(img)}`;
+          `./ chat.html ? id = ${item.userId}& name=${encodeURIComponent(item.name)}& img=${encodeURIComponent(imgSrc)} `;
+
+
       };
 
       chatListBox.appendChild(div);
     });
+
 
   } catch (err) {
     console.log(err);
