@@ -1,214 +1,214 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-/* ===============================
-AUTH
-=============================== */
-const token = localStorage.getItem("token");
+  /* ===============================
+  AUTH
+  =============================== */
+  const token = localStorage.getItem("token");
 
-if (!token) {
-window.location.href = "login.html";
-return;
-}
+  if (!token) {
+    window.location.href = "login.html";
+    return;
+  }
 
-/* ===============================
-STATE
-=============================== */
-let allUsers = [];
-let filteredUsers = [];
-let index = 0;
+  /* ===============================
+  STATE
+  =============================== */
+  let allUsers = [];
+  let filteredUsers = [];
+  let index = 0;
 
-const PAGE_SIZE = 6;
+  const PAGE_SIZE = 6;
 
-/* ===============================
-AGE GENERATE
-=============================== */
-function generateAge() {
-
-
-const ageSelect =
-  document.getElementById("ageSelect");
-
-if (!ageSelect) return;
-
-ageSelect.innerHTML =
-  `<option value="">Any</option>`;
-
-for (let i = 18; i <= 60; i++) {
-
-  ageSelect.innerHTML +=
-    `<option value="${i}">${i}</option>`;
-}
+  /* ===============================
+  AGE GENERATE
+  =============================== */
+  function generateAge() {
 
 
-}
+    const ageSelect =
+      document.getElementById("ageSelect");
 
-/* ===============================
-PROFESSION GENERATE
-=============================== */
-function populateProfessions(users) {
+    if (!ageSelect) return;
 
+    ageSelect.innerHTML =
+      `<option value="">Any</option>`;
 
-const select =
-  document.getElementById("professionSelect");
+    for (let i = 18; i <= 60; i++) {
 
-if (!select) return;
-
-const unique = [
-  ...new Set(
-    users
-      .map(u => u.occupation)
-      .filter(Boolean)
-  )
-];
-
-select.innerHTML =
-  `<option value="">Any</option>`;
-
-unique.forEach(p => {
-
-  select.innerHTML +=
-    `<option value="${p}">${p}</option>`;
-});
-
-
-}
-
-/* ===============================
-LOAD MATCHES
-=============================== */
-async function loadMatches(search = "") {
-
-
-try {
-
-  const url = search
-    ? `${API_URL}/api/profile/matches?search=${search}`
-    : `${API_URL}/api/profile/matches`;
-
-  const res = await fetch(url, {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
-
-  const users = await res.json();
-
-  if (!res.ok) return;
-
-  allUsers = users || [];
-  filteredUsers = users || [];
-
-  index = 0;
-
-  document.getElementById(
-    "matchGrid"
-  ).innerHTML = "";
-
-  populateProfessions(users);
-
-  render();
-
-} catch (err) {
-
-  console.log("ERROR:", err);
-}
-
-
-}
-
-/* ===============================
-LOAD MATCHES WITH FILTER
-=============================== */
-async function loadMatchesWithFilter(
-query = ""
-) {
-
-
-try {
-
-  const res = await fetch(
-    `${API_URL}/api/profile/matches${query}`,
-    {
-      headers: {
-        Authorization:
-          "Bearer " + token,
-      },
+      ageSelect.innerHTML +=
+        `<option value="${i}">${i}</option>`;
     }
-  );
-
-  const users = await res.json();
-
-  if (!res.ok) return;
-
-  allUsers = users || [];
-  filteredUsers = users || [];
-
-  index = 0;
-
-  document.getElementById(
-    "matchGrid"
-  ).innerHTML = "";
-
-  render();
-
-} catch (err) {
-
-  console.log(
-    "Filter ERROR:",
-    err
-  );
-}
 
 
-}
+  }
 
-/* ===============================
-RENDER
-=============================== */
-function render() {
+  /* ===============================
+  PROFESSION GENERATE
+  =============================== */
+  function populateProfessions(users) {
 
 
-const grid =
-  document.getElementById("matchGrid");
+    const select =
+      document.getElementById("professionSelect");
 
-if (!grid) return;
+    if (!select) return;
 
-const slice =
-  filteredUsers.slice(
-    index,
-    index + PAGE_SIZE
-  );
+    const unique = [
+      ...new Set(
+        users
+          .map(u => u.occupation)
+          .filter(Boolean)
+      )
+    ];
 
-if (
-  slice.length === 0 &&
-  index === 0
-) {
+    select.innerHTML =
+      `<option value="">Any</option>`;
 
-  grid.innerHTML =
-    "<p>No matches found</p>";
+    unique.forEach(p => {
 
-  return;
-}
+      select.innerHTML +=
+        `<option value="${p}">${p}</option>`;
+    });
 
-slice.forEach(user => {
 
-  // ===============================
-  // IMAGE
-  // ===============================
-  const imgSrc =
-    user.profileImage
-      ? user.profileImage
-      : "/images/default-profile.png";
+  }
 
-  // ===============================
-  // AGE
-  // ===============================
-  const age = user.dob
-    ? new Date().getFullYear() -
-      new Date(user.dob).getFullYear()
-    : "--";
+  /* ===============================
+  LOAD MATCHES
+  =============================== */
+  async function loadMatches(search = "") {
 
-  grid.innerHTML += `
+
+    try {
+
+      const url = search
+        ? `${API_URL}/api/profile/matches?search=${search}`
+        : `${API_URL}/api/profile/matches`;
+
+      const res = await fetch(url, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+
+      const users = await res.json();
+
+      if (!res.ok) return;
+
+      allUsers = users || [];
+      filteredUsers = users || [];
+
+      index = 0;
+
+      document.getElementById(
+        "matchGrid"
+      ).innerHTML = "";
+
+      populateProfessions(users);
+
+      render();
+
+    } catch (err) {
+
+      console.log("ERROR:", err);
+    }
+
+
+  }
+
+  /* ===============================
+  LOAD MATCHES WITH FILTER
+  =============================== */
+  async function loadMatchesWithFilter(
+    query = ""
+  ) {
+
+
+    try {
+
+      const res = await fetch(
+        `${API_URL}/api/profile/matches${query}`,
+        {
+          headers: {
+            Authorization:
+              "Bearer " + token,
+          },
+        }
+      );
+
+      const users = await res.json();
+
+      if (!res.ok) return;
+
+      allUsers = users || [];
+      filteredUsers = users || [];
+
+      index = 0;
+
+      document.getElementById(
+        "matchGrid"
+      ).innerHTML = "";
+
+      render();
+
+    } catch (err) {
+
+      console.log(
+        "Filter ERROR:",
+        err
+      );
+    }
+
+
+  }
+
+  /* ===============================
+  RENDER
+  =============================== */
+  function render() {
+
+
+    const grid =
+      document.getElementById("matchGrid");
+
+    if (!grid) return;
+
+    const slice =
+      filteredUsers.slice(
+        index,
+        index + PAGE_SIZE
+      );
+
+    if (
+      slice.length === 0 &&
+      index === 0
+    ) {
+
+      grid.innerHTML =
+        "<p>No matches found</p>";
+
+      return;
+    }
+
+    slice.forEach(user => {
+
+      // ===============================
+      // IMAGE
+      // ===============================
+      const imgSrc =
+        user.profileImage
+          ? user.profileImage
+          : "/images/default-profile.png";
+
+      // ===============================
+      // AGE
+      // ===============================
+      const age = user.dob
+        ? new Date().getFullYear() -
+        new Date(user.dob).getFullYear()
+        : "--";
+
+      grid.innerHTML += `
     <div class="match-card">
 
       <img src="${imgSrc}" >
@@ -231,208 +231,208 @@ slice.forEach(user => {
 
     </div>
   `;
-});
+    });
 
-index += PAGE_SIZE;
+    index += PAGE_SIZE;
 
-const btn =
-  document.getElementById(
-    "loadMoreBtn"
-  );
-
-if (btn) {
-
-  btn.style.display =
-    index >= filteredUsers.length
-      ? "none"
-      : "block";
-}
-
-
-}
-
-/* ===============================
-FILTER APPLY
-=============================== */
-const applyBtn =
-document.querySelector(".apply-btn");
-
-if (applyBtn) {
-
-
-applyBtn.addEventListener(
-  "click",
-  () => {
-
-    const age =
+    const btn =
       document.getElementById(
-        "ageSelect"
-      )?.value;
-
-    const religion =
-      document.getElementById(
-        "religionSelect"
-      )?.value;
-
-    const profession =
-      document.getElementById(
-        "professionSelect"
-      )?.value;
-
-    const country =
-      document.getElementById(
-        "countrySelect"
-      )?.value;
-
-    const marital =
-      document.getElementById(
-        "maritalSelect"
-      )?.value;
-
-    let query = [];
-
-    if (age)
-      query.push(`age=${age}`);
-
-    if (religion)
-      query.push(
-        `religion=${religion}`
+        "loadMoreBtn"
       );
 
-    if (profession)
-      query.push(
-        `profession=${profession}`
-      );
+    if (btn) {
 
-    if (country)
-      query.push(
-        `country=${country}`
-      );
+      btn.style.display =
+        index >= filteredUsers.length
+          ? "none"
+          : "block";
+    }
 
-    if (marital)
-      query.push(
-        `marital=${marital}`
-      );
 
-    const queryString =
-      query.length
-        ? "?" + query.join("&")
-        : "";
+  }
 
-    loadMatchesWithFilter(
-      queryString
+  /* ===============================
+  FILTER APPLY
+  =============================== */
+  const applyBtn =
+    document.querySelector(".apply-btn");
+
+  if (applyBtn) {
+
+
+    applyBtn.addEventListener(
+      "click",
+      () => {
+
+        const age =
+          document.getElementById(
+            "ageSelect"
+          )?.value;
+
+        const religion =
+          document.getElementById(
+            "religionSelect"
+          )?.value;
+
+        const profession =
+          document.getElementById(
+            "professionSelect"
+          )?.value;
+
+        const country =
+          document.getElementById(
+            "countrySelect"
+          )?.value;
+
+        const marital =
+          document.getElementById(
+            "maritalSelect"
+          )?.value;
+
+        let query = [];
+
+        if (age)
+          query.push(`age=${age}`);
+
+        if (religion)
+          query.push(
+            `religion=${religion}`
+          );
+
+        if (profession)
+          query.push(
+            `profession=${profession}`
+          );
+
+        if (country)
+          query.push(
+            `country=${country}`
+          );
+
+        if (marital)
+          query.push(
+            `marital=${marital}`
+          );
+
+        const queryString =
+          query.length
+            ? "?" + query.join("&")
+            : "";
+
+        loadMatchesWithFilter(
+          queryString
+        );
+      }
     );
+
+
   }
-);
+
+  /* ===============================
+  CLEAR FILTER
+  =============================== */
+  const clearBtn =
+    document.querySelector(".clear-btn");
+
+  if (clearBtn) {
 
 
-}
+    clearBtn.addEventListener(
+      "click",
+      () => {
 
-/* ===============================
-CLEAR FILTER
-=============================== */
-const clearBtn =
-document.querySelector(".clear-btn");
+        document
+          .querySelectorAll(
+            ".filter-panel select"
+          )
+          .forEach(
+            s => (s.value = "")
+          );
 
-if (clearBtn) {
+        allUsers = [];
+        filteredUsers = [];
+        index = 0;
+
+        document.getElementById(
+          "matchGrid"
+        ).innerHTML = "";
+
+        loadMatches();
+      }
+    );
 
 
-clearBtn.addEventListener(
-  "click",
-  () => {
+  }
 
-    document
-      .querySelectorAll(
-        ".filter-panel select"
-      )
-      .forEach(
-        s => (s.value = "")
-      );
-
-    allUsers = [];
-    filteredUsers = [];
-    index = 0;
-
+  /* ===============================
+  LOAD MORE
+  =============================== */
+  const loadBtn =
     document.getElementById(
-      "matchGrid"
-    ).innerHTML = "";
+      "loadMoreBtn"
+    );
 
-    loadMatches();
+  if (loadBtn) {
+
+
+    loadBtn.addEventListener(
+      "click",
+      render
+    );
+
+
   }
-);
+
+  /* ===============================
+  SEARCH
+  =============================== */
+  const searchInput =
+    document.querySelector(
+      ".nav-search input"
+    );
+
+  if (searchInput) {
 
 
-}
+    let timeout;
 
-/* ===============================
-LOAD MORE
-=============================== */
-const loadBtn =
-document.getElementById(
-"loadMoreBtn"
-);
+    searchInput.addEventListener(
+      "input",
+      function () {
 
-if (loadBtn) {
+        const value =
+          this.value.trim();
 
+        clearTimeout(timeout);
 
-loadBtn.addEventListener(
-  "click",
-  render
-);
+        timeout = setTimeout(() => {
 
+          loadMatches(value);
 
-}
-
-/* ===============================
-SEARCH
-=============================== */
-const searchInput =
-document.querySelector(
-".nav-search input"
-);
-
-if (searchInput) {
+        }, 400);
+      }
+    );
 
 
-let timeout;
-
-searchInput.addEventListener(
-  "input",
-  function () {
-
-    const value =
-      this.value.trim();
-
-    clearTimeout(timeout);
-
-    timeout = setTimeout(() => {
-
-      loadMatches(value);
-
-    }, 400);
   }
-);
+
+  /* ===============================
+  NAVIGATION
+  =============================== */
+  window.openProfile = function (id) {
 
 
-}
-
-/* ===============================
-NAVIGATION
-=============================== */
-window.openProfile = function (id) {
+    window.location.href =
+      `view-profile.html?id=${id}`;
 
 
-window.location.href =
-  `view-profile.html?id=${id}`;
+  };
 
+  /* ===============================
+  INIT
+  =============================== */
+  generateAge();
 
-};
-
-/* ===============================
-INIT
-=============================== */
-generateAge();
-
-loadMatches();
+  loadMatches();
 
 });
